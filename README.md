@@ -1,4 +1,4 @@
-# Clash系代理配置 (防 DNS & WebRTC 泄漏)
+## Clash系代理配置 (防 DNS & WebRTC 泄漏)
 
 本仓库提供经测试优化的 Clash 覆写脚本，适用于 **FlClash**、**Clash Verge Rev**、**Mihomo Party** 等基于 Mihomo / Clash Meta 内核的客户端，全面修复 DNS 泄漏与 WebRTC 泄漏问题。
 
