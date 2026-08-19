@@ -26,6 +26,12 @@
 -  **节点 UDP 自动开启**：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
 -  **规则精简与分流优化**：集成 Loyalsoldier 与 xiaolin-007 常用规则集，加快匹配与加载速度。
 
+
+
+------
+
+
+
 ###  常用检测地址
 -  **IPPure**：https://ippure.com
 -  **browserleaks**：https://browserleaks.com/dns
