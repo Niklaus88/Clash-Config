@@ -6,9 +6,9 @@
 
 在 Clash 客户端的 **配置 / 覆写 (Override) 脚本 / 脚本扩展** 中填入以下链接：
 
-- **Gist 订阅链接（推荐）**：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.ymal`
-- **GitHub Raw 直连链接**：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.ymal`
-- **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.ymal`
+- **Gist 订阅链接（推荐）**：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.yaml`
+- **GitHub Raw 直连链接**：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.yaml`
+- **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.yaml`
 
 ---
 
