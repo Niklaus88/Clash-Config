@@ -1,6 +1,6 @@
 ## Clash系代理配置 (防 DNS & WebRTC 泄漏)
 
-本仓库提供经测试优化的 Clash 覆写脚本，适用于 **FlClash**、**Clash Verge Rev**、**Mihomo Party** 等基于 Mihomo / Clash Meta 内核的客户端，全面修复 DNS 泄漏与 WebRTC 泄漏问题。
+本仓库提供经测试优化的 Clash 覆写脚本，适用于 **FlClash**、**Clash Verge** 等基于 Mihomo / Clash Meta 内核的客户端，全面修复 DNS 泄漏与 WebRTC 泄漏问题。
 
 
 ###  订阅 / 覆写脚本链接
@@ -25,3 +25,8 @@
 -  **防 WebRTC 泄漏**：采用 `REJECT-DROP` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
 -  **节点 UDP 自动开启**：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
 -  **规则精简与分流优化**：集成 Loyalsoldier 与 xiaolin-007 常用规则集，加快匹配与加载速度。
+
+###  常用检测地址
+-  **IPPure**：https://ippure.com
+-  **browserleaks**：https://browserleaks.com/dns
+-  **ipleak**：https://ipleak.net
