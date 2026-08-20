@@ -310,7 +310,7 @@ function main(config) {
       "type": "select",
       "include-all": true,
       "proxies": ["节点选择"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png"
+      "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png"
     },
     {
       ...groupBaseOption,
