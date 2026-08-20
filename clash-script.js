@@ -395,7 +395,7 @@ function main(config) {
     }
   ];
 
-// 覆盖原配置中的规则
+  // 覆盖原配置中的规则
   config["rule-providers"] = ruleProviders;
   config["rules"] = rules;
 // 添加判断
