@@ -8,11 +8,11 @@
 在 FLClash 客户端 **配置 —— 覆写 —— 配置脚本 —— 添加 —— 外部获取 —— URL导入** 中填入以下链接：
 
 
-- **Gist 订阅链接（推荐）**：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.yaml`
+- **Gist 订阅链接（推荐）**：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.js`
   
-- **GitHub Raw 直连链接**：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.yaml`
+- **GitHub Raw 直连链接**：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.js`
   
-- **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.yaml`
+- **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.js`
   
 
 推荐 Chrome/Edge 浏览器使用 **WebRTC Control** 扩展
