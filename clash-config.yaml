@@ -1,5 +1,5 @@
-# Clash / Mihomo 静态配置文件 
-# 功能特色：包含防 DNS / WebRTC 泄露策略、安全 DoH 分流
+# Clash / Mihomo 静态配置文件 (由 JS 覆写脚本静态转换生成)
+# 功能特色：包含防 DNS / WebRTC 泄露策略、安全 DoH 分流与 Koolson 全彩图标
 
 port: 7890
 socks-port: 7891
@@ -73,6 +73,7 @@ sniffer:
 # 1. 只有一个订阅：只需在 airport-1 的 url 处粘贴你的订阅链接，将 airport-2 和 airport-3 整段删除。
 # 2. 有多个订阅：按格式在下方依次添加，每个订阅起一个唯一的英文字符名（如 airport-1, airport-2）。
 # 3. 自动汇聚：所有代理策略组均已开启 include-all，客户端会自动拉取并将所有订阅的节点汇总合并，无需手动挑选！
+# 4. 首次使用提示：导入配置后，请在客户端“代理/提供者 (Providers)”列表中点击一次 🔄 刷新以拉取节点。
 proxy-providers:
   airport-1:
     type: http
@@ -118,7 +119,7 @@ proxy-groups:
     type: select
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
-    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -182,7 +183,7 @@ proxy-groups:
     include-all: true
     proxies:
       - 节点选择
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png
+    icon: https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -207,7 +208,7 @@ proxy-groups:
       - 全局直连
       - 节点选择
     include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Microsoft.png
+    icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -285,7 +286,7 @@ proxy-groups:
       - DIRECT
       - 节点选择
     include-all: true
-    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/link.svg
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -297,7 +298,7 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
-    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/block.svg
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Reject.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -311,7 +312,7 @@ proxy-groups:
       - 全局直连
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
-    icon: https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png
 rule-providers:
   reject:
     type: http
