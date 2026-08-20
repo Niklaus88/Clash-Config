@@ -1,6 +1,6 @@
 # Clash 系列客户端配置与覆写脚本（防 DNS & WebRTC 泄漏）
 
-本项目提供经优化测试的 **JavaScript (JS) 动态覆写脚本** 与 **独立 YAML 配置文件**，适用于 **FlClash**、**Clash Verge**、**Mihomo Party** 等基于 Mihomo / Clash Meta 内核的客户端，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
+本项目提供经优化测试的 **JavaScript (JS) 动态覆写脚本** 与 **独立 YAML 配置文件**，适用于 **FlClash**、**Clash Verge** 等基于 Mihomo / Clash Meta 内核的客户端，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
 
 ---
 
