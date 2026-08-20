@@ -15,9 +15,9 @@
 - **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.js`
   
 
-推荐 Chrome/Edge 浏览器使用 **WebRTC Control** 扩展
+推荐 Chrome/Edge 浏览器使用 [**WebRTC Control**](https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm?pli=1) 扩展
 
-WebRTC Control：https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm?pli=1
+
 
 
 ------
