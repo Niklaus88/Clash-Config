@@ -375,7 +375,7 @@ function main(config) {
       "type": "select",
       "proxies": ["DIRECT","节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/China_Map.png"
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png"
     },
     {
       ...groupBaseOption,
