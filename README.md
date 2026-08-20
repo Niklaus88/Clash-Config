@@ -40,3 +40,10 @@ WebRTC Control：https://chromewebstore.google.com/detail/webrtc-control/fjkmabm
 -  **IPPure**：https://ippure.com
 -  **browserleaks**：https://browserleaks.com/dns
 -  **ipleak**：https://ipleak.net
+
+
+------
+
+
+###  感谢
+[xiaolin-007](https://github.com/xiaolin-007)
