@@ -1,5 +1,5 @@
-# Clash / Mihomo 静态配置文件 (由 JS 覆写脚本静态转换生成)
-# 功能特色：包含防 DNS / WebRTC 泄露策略、安全 DoH 分流与 Koolson 全彩图标
+# Clash / Mihomo 静态配置文件 
+# 功能特色：包含防 DNS / WebRTC 泄露策略、安全 DoH 分流
 
 port: 7890
 socks-port: 7891
