@@ -265,8 +265,7 @@ function main(config) {
   // 覆盖原配置中的代理组
   config["proxy-groups"] = [
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "节点选择",
       "type": "select",
       "include-all": true,
@@ -274,8 +273,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "谷歌服务",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
@@ -283,8 +281,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "YouTube",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
@@ -292,44 +289,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png"
     },
     {
-      ...groupBaseOption
-    ,
-      "name": "Telegram",
-      "type": "select",
-      "proxies": ["节点选择","全局直连"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png"
-    },
-    {
-      ...groupBaseOption
-    ,
-      "name": "Spotify",
-      "type": "select",
-      "proxies": ["节点选择","全局直连"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
-    },
-    {
-      ...groupBaseOption
-    ,
-      "name": "AI",
-      "type": "select",
-      "include-all": true,
-      "proxies": ["节点选择"],
-      "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png"
-    },
-    {
-      ...groupBaseOption
-    ,
-      "name": "TikTok",
-      "type": "select",
-      "include-all": true,
-      "proxies": ["节点选择"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png"
-    },
-    {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "Netflix",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
@@ -337,8 +297,31 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
+      "name": "Telegram",
+      "type": "select",
+      "proxies": ["节点选择","全局直连"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "AI",
+      "type": "select",
+      "include-all": true,
+      "proxies": ["节点选择"],
+      "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "TikTok",
+      "type": "select",
+      "include-all": true,
+      "proxies": ["节点选择"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png"
+    },
+    {
+      ...groupBaseOption,
       "name": "微软服务",
       "type": "select",
       "proxies": ["全局直连","节点选择"],
@@ -346,8 +329,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "苹果服务",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
@@ -355,8 +337,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "动画疯",
       "type": "select",
       "proxies": ["节点选择"],
@@ -365,8 +346,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Bahamut.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "哔哩哔哩港澳台",
       "type": "select",
       "proxies": ["全局直连","节点选择"],
@@ -375,16 +355,22 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/bilibili.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
+      "name": "Spotify",
+      "type": "select",
+      "proxies": ["节点选择","全局直连"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
+    },
+    {
+      ...groupBaseOption,
       "name": "广告过滤",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Advertising.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "全局直连",
       "type": "select",
       "proxies": ["DIRECT","节点选择"],
@@ -392,16 +378,14 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "全局拦截",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Reject.png"
     },
     {
-      ...groupBaseOption
-    ,
+      ...groupBaseOption,
       "name": "漏网之鱼",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
