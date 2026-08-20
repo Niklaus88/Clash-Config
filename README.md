@@ -17,12 +17,12 @@
 ---
 
 ### 方式 B：使用独立 YAML 配置文件（支持多机场自动合并）
-适用于希望用单个配置文件直接管理 1 个或多个机场订阅的用户。
+适用于希望用单个配置文件直接管理 1 个或多个订阅的用户。
 
 * 使用方法：
   1. 下载 [clash-config.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-config.yaml) 文件。
-  2. 用文本编辑器打开，在 `proxy-providers:` 区域将 `url:` 替换为你自己的机场订阅链接（支持同时填入 1~3 个或更多机场）。
-  3. 导入客户端直接运行，客户端会自动拉取并汇总所有机场节点。
+  2. 用文本编辑器打开，在 `proxy-providers:` 区域将 `url:` 替换为你自己的订阅链接（支持同时填入 1~3 个或更多订阅）。
+  3. 导入客户端直接运行，客户端会自动拉取并汇总所有订阅节点。
 
 * Raw 链接：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-config.yaml`
 * CDN 加速：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/clash-config.yaml`
