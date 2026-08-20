@@ -9,7 +9,7 @@
 ### 方式 A：使用 JS 动态覆写脚本（推荐挂载已有订阅）
 适用于已有机场订阅，希望通过客户端“脚本覆写”功能自动注入防泄露规则与全彩图标。
 
-* 导入方式：在客户端中通过 配置 ➔ 覆写 ➔ 配置脚本 ➔ 外部获取 (URL) 填入以下链接：
+* 导入方式：在 [FlClash](https://github.com/chen08209/FlClash) 客户端中通过 配置 ➔ 覆写 ➔ 配置脚本 ➔ 外部获取 (URL) 填入以下链接：
   * GitHub Raw 直连：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-script.js`
   * CDN 加速链接：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/clash-script.js`
   * Gist 订阅链接：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.js`
