@@ -1,13 +1,12 @@
 ## Clash系代理配置 (防 DNS & WebRTC 泄漏)
 
-本仓库提供经测试优化的 Clash 覆写脚本，适用于 **FlClash**、**Clash Verge** 等基于 Mihomo / Clash Meta 内核的客户端，全面修复 DNS 泄漏与 WebRTC 泄漏问题。本配置由 xiaolin-007  的 clash-verge-script 配置修改而来。
+本仓库提供经测试优化的 Clash 覆写脚本，适用于 **FlClash**、**Clash Verge** 等基于 Mihomo / Clash Meta 内核的客户端，主要解决手机客户端 DNS 泄漏与 WebRTC 泄漏问题。本配置由 xiaolin-007  的 clash-verge-script 项目修改而来。
 
 
 ###  订阅 / 覆写脚本链接
 
-在 FLClash 客户端的 **配置 —— 覆写 —— 配置脚本 —— 添加 —— 外部获取 —— URL导入** 中填入以下链接：
+在 FLClash 客户端 **配置 —— 覆写 —— 配置脚本 —— 添加 —— 外部获取 —— URL导入** 中填入以下链接：
 
-在 Clahs verge 客户端的 **订阅 —— 全局扩展脚本 —— 编辑脚本** 复制全部代码粘贴即可
 
 - **Gist 订阅链接（推荐）**：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.yaml`
   
@@ -16,7 +15,7 @@
 - **CDN 加速链接**：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/%E9%98%B2DNS-WebRTC%E6%B3%84%E9%9C%B2%E9%85%8D%E7%BD%AE.yaml`
   
 
-Chrome/Edge 浏览器配合 **WebRTC Control** 扩展使用
+推荐 Chrome/Edge 浏览器使用 **WebRTC Control** 扩展
 
 WebRTC Control：https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm?pli=1
 
