@@ -35,7 +35,7 @@
 - 防 WebRTC 泄漏：采用 `REJECT-DROP` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
 - 节点 UDP 自动开启：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
 - 精选 Koolson 全彩图标：策略组图标全面预装 Koolson/Qure 高清彩色图标。
-- 规则精简与分流优化：集成 Loyalsoldier 与 xiaolin-007 常用规则集，加快匹配与加载速度。
+- 规则精简与分流优化：集成 Loyalsoldier 常用规则集，加快匹配与加载速度。
 
 ---
 
