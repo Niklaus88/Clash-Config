@@ -221,7 +221,7 @@ const rules = [
   "RULE-SET,direct,全局直连",
   "RULE-SET,lancidr,全局直连,no-resolve",
   "RULE-SET,cncidr,全局直连,no-resolve",
-  "RULE-SET,telegramcidr,电报消息,no-resolve",
+  "RULE-SET,telegramcidr,Telegram,no-resolve",
   // 其他规则
   "GEOSITE,CN,全局直连",
   "GEOIP,LAN,全局直连,no-resolve",
@@ -298,7 +298,7 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "电报消息",
+      "name": "Telegram",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
       "include-all": true,
