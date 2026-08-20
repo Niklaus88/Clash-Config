@@ -109,8 +109,7 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -121,8 +120,7 @@ proxy-groups:
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -135,8 +133,7 @@ proxy-groups:
       - 全局直连
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -149,62 +146,7 @@ proxy-groups:
       - 全局直连
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png
-  - interval:
-    300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
-    name: Telegram
-    type: select
-    proxies:
-      - 节点选择
-      - 全局直连
-    include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png
-  - interval:
-    300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
-    name: Spotify
-    type: select
-    proxies:
-      - 节点选择
-      - 全局直连
-    include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png
-  - interval:
-    300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
-    name: AI
-    type: select
-    include-all: true
-    proxies:
-      - 节点选择
-    icon: https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png
-  - interval:
-    300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
-    name: TikTok
-    type: select
-    include-all: true
-    proxies:
-      - 节点选择
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -217,8 +159,44 @@ proxy-groups:
       - 全局直连
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png
-  - interval:
-    300
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: Telegram
+    type: select
+    proxies:
+      - 节点选择
+      - 全局直连
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: AI
+    type: select
+    include-all: true
+    proxies:
+      - 节点选择
+    icon: https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: TikTok
+    type: select
+    include-all: true
+    proxies:
+      - 节点选择
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -231,8 +209,7 @@ proxy-groups:
       - 节点选择
     include-all: true
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -245,8 +222,7 @@ proxy-groups:
       - 全局直连
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -259,8 +235,7 @@ proxy-groups:
     include-all: true
     filter: (?i)台|tw|TW
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Bahamut.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -274,8 +249,20 @@ proxy-groups:
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/bilibili.png
-  - interval:
-    300
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: Spotify
+    type: select
+    proxies:
+      - 节点选择
+      - 全局直连
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -287,8 +274,7 @@ proxy-groups:
       - REJECT
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Advertising.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -301,8 +287,7 @@ proxy-groups:
       - 节点选择
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
@@ -314,8 +299,7 @@ proxy-groups:
       - REJECT
       - DIRECT
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Reject.png
-  - interval:
-    300
+  - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
     lazy: true
