@@ -326,7 +326,7 @@ function main(config) {
       "type": "select",
       "proxies": ["全局直连","节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Microsoft.png"
+      "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png"
     },
     {
       ...groupBaseOption,
