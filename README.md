@@ -4,7 +4,7 @@
 
 ---
 
-## 💡 两种使用方式（二选一）
+##  两种使用方式（二选一）
 
 ### 方式 A：使用 JS 动态覆写脚本（推荐挂载已有订阅）
 适用于已有机场订阅，希望通过客户端“脚本覆写”功能自动注入防泄露规则与全彩图标。
@@ -29,17 +29,17 @@
 
 ---
 
-## 🛠 功能特色
+##  功能特色
 
-- ✅ **防 DNS 泄漏**：内置安全 DoH（Cloudflare / Google / OpenDNS），国内域名智能走 DNSPod / AliDNS 分流，兼顾隐私与网速。
-- ✅ **防 WebRTC 泄漏**：采用 `REJECT-DROP` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
-- ✅ **节点 UDP 自动开启**：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
-- ✅ **精选 Koolson 全彩图标**：策略组图标全面预装 Koolson/Qure 高清彩色图标。
-- ✅ **规则精简与分流优化**：集成 Loyalsoldier 与 xiaolin-007 常用规则集，加快匹配与加载速度。
+-  **防 DNS 泄漏**：内置安全 DoH（Cloudflare / Google / OpenDNS），国内域名智能走 DNSPod / AliDNS 分流，兼顾隐私与网速。
+-  **防 WebRTC 泄漏**：采用 `REJECT-DROP` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
+-  **节点 UDP 自动开启**：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
+-  **精选 Koolson 全彩图标**：策略组图标全面预装 Koolson/Qure 高清彩色图标。
+-  **规则精简与分流优化**：集成 Loyalsoldier 与 xiaolin-007 常用规则集，加快匹配与加载速度。
 
 ---
 
-## 🌐 常用泄露检测地址
+##  常用泄露检测地址
 
 - **IPPure**：[https://ippure.com](https://ippure.com)
 - **BrowserLeaks**：[https://browserleaks.com/dns](https://browserleaks.com/dns)
