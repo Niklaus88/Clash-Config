@@ -152,19 +152,6 @@ proxy-groups:
     lazy: true
     max-failed-times: 3
     hidden: false
-    name: Netflix
-    type: select
-    proxies:
-      - 节点选择
-      - 全局直连
-    include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png
-  - interval: 300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
     name: Telegram
     type: select
     proxies:
@@ -172,6 +159,19 @@ proxy-groups:
       - 全局直连
     include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: Spotify
+    type: select
+    proxies:
+      - 节点选择
+      - 全局直连
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -196,6 +196,19 @@ proxy-groups:
     proxies:
       - 节点选择
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png
+  - interval: 300
+    timeout: 3000
+    url: http://www.gstatic.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: Netflix
+    type: select
+    proxies:
+      - 节点选择
+      - 全局直连
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png
   - interval: 300
     timeout: 3000
     url: http://www.gstatic.com/generate_204
@@ -255,19 +268,6 @@ proxy-groups:
     lazy: true
     max-failed-times: 3
     hidden: false
-    name: Spotify
-    type: select
-    proxies:
-      - 节点选择
-      - 全局直连
-    include-all: true
-    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png
-  - interval: 300
-    timeout: 3000
-    url: http://www.gstatic.com/generate_204
-    lazy: true
-    max-failed-times: 3
-    hidden: false
     name: 广告过滤
     type: select
     proxies:
@@ -313,6 +313,7 @@ proxy-groups:
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
     icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png
+
 rule-providers:
   reject:
     type: http
