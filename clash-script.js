@@ -290,19 +290,19 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "Netflix",
-      "type": "select",
-      "proxies": ["节点选择","全局直连"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png"
-    },
-    {
-      ...groupBaseOption,
       "name": "Telegram",
       "type": "select",
       "proxies": ["节点选择","全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "Spotify",
+      "type": "select",
+      "proxies": ["节点选择","全局直连"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
     },
     {
       ...groupBaseOption,
@@ -319,6 +319,14 @@ function main(config) {
       "include-all": true,
       "proxies": ["节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "Netflix",
+      "type": "select",
+      "proxies": ["节点选择","全局直连"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png"
     },
     {
       ...groupBaseOption,
@@ -353,14 +361,6 @@ function main(config) {
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/bilibili.png"
-    },
-    {
-      ...groupBaseOption,
-      "name": "Spotify",
-      "type": "select",
-      "proxies": ["节点选择","全局直连"],
-      "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
     },
     {
       ...groupBaseOption,
