@@ -231,8 +231,8 @@ const rules = [
 // 代理组通用配置
 const groupBaseOption = {
   "interval": 300,
-  "timeout": 3000,
-  "url": "http://www.gstatic.com/generate_204",
+  "timeout": 5000,
+  "url": "https://cp.cloudflare.com/generate_204",
   "lazy": true,
   "max-failed-times": 3,
   "hidden": false
