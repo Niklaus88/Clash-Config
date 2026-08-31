@@ -83,20 +83,15 @@
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "sniff": true,
-      "sniff_override_destination": true
+      "listen_port": 7890
     },
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "singbox-tun",
       "inet4_address": "172.19.0.1/30",
       "auto_route": true,
       "strict_route": true,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
+      "stack": "mixed"
     }
   ],
   "outbounds": [
@@ -240,10 +235,6 @@
       "type": "block"
     },
     {
-      "tag": "dns-out",
-      "type": "dns"
-    },
-    {
       "tag": "自建-示例节点",
       "type": "shadowsocks",
       "server": "1.2.3.4",
@@ -254,6 +245,13 @@
   ],
   "route": {
     "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
       {
         "port": [
           3478,
@@ -274,10 +272,6 @@
           "stun"
         ],
         "outbound": "block"
-      },
-      {
-        "protocol": "dns",
-        "outbound": "dns-out"
       },
       {
         "clash_mode": "Direct",
