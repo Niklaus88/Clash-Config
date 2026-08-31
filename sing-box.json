@@ -40,10 +40,7 @@
       },
       {
         "rule_set": [
-          "private",
-          "direct",
-          "cncidr",
-          "lancidr",
+          "geosite-private",
           "geosite-cn"
         ],
         "server": "dns_direct"
@@ -87,12 +84,12 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "auto_route": true,
-      "strict_route": true,
-      "stack": "mixed",
       "address": [
         "172.19.0.1/30"
-      ]
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed"
     }
   ],
   "outbounds": [
@@ -245,6 +242,7 @@
     }
   ],
   "route": {
+    "default_domain_resolver": "dns_direct",
     "rules": [
       {
         "action": "sniff"
@@ -315,11 +313,7 @@
         "outbound": "广告过滤"
       },
       {
-        "rule_set": "applications",
-        "outbound": "全局直连"
-      },
-      {
-        "rule_set": "private",
+        "rule_set": "geosite-private",
         "outbound": "全局直连"
       },
       {
@@ -339,12 +333,19 @@
         "outbound": "Netflix"
       },
       {
-        "rule_set": "bahamut",
-        "outbound": "动画疯"
+        "rule_set": [
+          "telegram",
+          "geoip-telegram"
+        ],
+        "outbound": "Telegram"
       },
       {
         "rule_set": "spotify",
         "outbound": "Spotify"
+      },
+      {
+        "rule_set": "bahamut",
+        "outbound": "动画疯"
       },
       {
         "rule_set": "bilibili",
@@ -359,30 +360,26 @@
         "outbound": "TikTok"
       },
       {
+        "rule_set": "microsoft",
+        "outbound": "微软服务"
+      },
+      {
         "rule_set": "google",
         "outbound": "谷歌服务"
       },
       {
         "rule_set": [
-          "proxy",
           "gfw",
-          "tld-not-cn"
+          "geolocation-!cn"
         ],
         "outbound": "节点选择"
       },
       {
         "rule_set": [
-          "direct",
-          "lancidr",
-          "cncidr",
           "geosite-cn",
           "geoip-cn"
         ],
         "outbound": "全局直连"
-      },
-      {
-        "rule_set": "telegramcidr",
-        "outbound": "Telegram"
       }
     ],
     "rule_set": [
@@ -521,8 +518,7 @@
       }
     ],
     "final": "漏网之鱼",
-    "auto_detect_interface": true,
-    "default_domain_resolver": "dns_direct"
+    "auto_detect_interface": true
   },
   "experimental": {
     "cache_file": {
