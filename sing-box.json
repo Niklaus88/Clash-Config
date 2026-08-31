@@ -1,0 +1,571 @@
+{
+  "$schema": "https://raw.githubusercontent.com/SagerNet/sing-box/main/schemas/config.json",
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_proxy",
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "dns_resolver",
+        "strategy": "ipv4_only",
+        "detour": "节点选择"
+      },
+      {
+        "tag": "dns_direct",
+        "address": "https://223.5.5.5/dns-query",
+        "address_resolver": "dns_resolver",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_fakeip",
+        "address": "fakeip"
+      },
+      {
+        "tag": "dns_resolver",
+        "address": "223.5.5.5",
+        "strategy": "ipv4_only",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns_block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns_resolver"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "dns_direct"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "dns_fakeip"
+      },
+      {
+        "rule_set": "reject",
+        "server": "dns_block"
+      },
+      {
+        "rule_set": [
+          "private",
+          "direct",
+          "cncidr",
+          "lancidr",
+          "geosite-cn"
+        ],
+        "server": "dns_direct"
+      },
+      {
+        "domain_suffix": [
+          ".lan",
+          ".local",
+          "msftconnecttest.com",
+          "msftncsi.com"
+        ],
+        "domain": [
+          "localhost.ptlogin2.qq.com",
+          "localhost.sec.qq.com",
+          "localhost.work.weixin.qq.com",
+          "pool.ntp.org"
+        ],
+        "domain_keyword": [
+          "time"
+        ],
+        "server": "dns_direct"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "dns_fakeip"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15"
+    },
+    "strategy": "ipv4_only",
+    "independent_cache": true,
+    "reverse_mapping": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "0.0.0.0",
+      "listen_port": 7890,
+      "sniff": true,
+      "sniff_override_destination": true
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "singbox-tun",
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "sniff": true,
+      "sniff_override_destination": true
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "节点选择",
+      "type": "selector",
+      "outbounds": [
+        "自动选择",
+        "全局直连",
+        "自建-示例节点"
+      ]
+    },
+    {
+      "tag": "自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "自建-示例节点"
+      ],
+      "url": "https://cp.cloudflare.com/generate_204",
+      "interval": "5m",
+      "tolerance": 50
+    },
+    {
+      "tag": "谷歌服务",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "YouTube",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "Telegram",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "Spotify",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "AI",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "TikTok",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "Netflix",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "微软服务",
+      "type": "selector",
+      "outbounds": [
+        "全局直连",
+        "节点选择"
+      ]
+    },
+    {
+      "tag": "苹果服务",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "动画疯",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "哔哩哔哩港澳台",
+      "type": "selector",
+      "outbounds": [
+        "全局直连",
+        "节点选择"
+      ]
+    },
+    {
+      "tag": "广告过滤",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "节点选择",
+        "全局直连"
+      ]
+    },
+    {
+      "tag": "全局直连",
+      "type": "direct"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "全局拦截",
+      "type": "block"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    },
+    {
+      "tag": "自建-示例节点",
+      "type": "shadowsocks",
+      "server": "1.2.3.4",
+      "server_port": 8388,
+      "method": "chacha20-ietf-poly1305",
+      "password": "your_password"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "port": [
+          3478,
+          5349,
+          19302,
+          19303,
+          19304,
+          19305,
+          19306,
+          19307,
+          19308,
+          19309
+        ],
+        "outbound": "block"
+      },
+      {
+        "domain_keyword": [
+          "stun"
+        ],
+        "outbound": "block"
+      },
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "节点选择"
+      },
+      {
+        "process_name": [
+          "tune_free_next.exe"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "tf-pay.sayqz.com",
+          "ums.sayqz.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "googleapis.cn",
+          "gstatic.com",
+          "xn--ngstr-lra8j.com",
+          "github.io"
+        ],
+        "outbound": "节点选择"
+      },
+      {
+        "domain": [
+          "v2rayse.com"
+        ],
+        "outbound": "节点选择"
+      },
+      {
+        "rule_set": "reject",
+        "outbound": "广告过滤"
+      },
+      {
+        "rule_set": "applications",
+        "outbound": "全局直连"
+      },
+      {
+        "rule_set": "private",
+        "outbound": "全局直连"
+      },
+      {
+        "rule_set": "icloud",
+        "outbound": "微软服务"
+      },
+      {
+        "rule_set": "apple",
+        "outbound": "苹果服务"
+      },
+      {
+        "rule_set": "youtube",
+        "outbound": "YouTube"
+      },
+      {
+        "rule_set": "netflix",
+        "outbound": "Netflix"
+      },
+      {
+        "rule_set": "bahamut",
+        "outbound": "动画疯"
+      },
+      {
+        "rule_set": "spotify",
+        "outbound": "Spotify"
+      },
+      {
+        "rule_set": "bilibili",
+        "outbound": "哔哩哔哩港澳台"
+      },
+      {
+        "rule_set": "ai",
+        "outbound": "AI"
+      },
+      {
+        "rule_set": "tiktok",
+        "outbound": "TikTok"
+      },
+      {
+        "rule_set": "google",
+        "outbound": "谷歌服务"
+      },
+      {
+        "rule_set": [
+          "proxy",
+          "gfw",
+          "tld-not-cn"
+        ],
+        "outbound": "节点选择"
+      },
+      {
+        "rule_set": [
+          "direct",
+          "lancidr",
+          "cncidr",
+          "geosite-cn",
+          "geoip-cn"
+        ],
+        "outbound": "全局直连"
+      },
+      {
+        "rule_set": "telegramcidr",
+        "outbound": "Telegram"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "reject",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/reject.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "icloud",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/icloud.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/apple.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/google.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/proxy.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "direct",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/direct.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "private",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/private.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "gfw",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/gfw.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "tld-not-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/tld-not-cn.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "telegramcidr",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/telegramcidr.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "cncidr",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/cncidr.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "lancidr",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/lancidr.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "applications",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/sing-box-rules@release/applications.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/youtube.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "spotify",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/spotify.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "bahamut",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bahamut.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "tiktok",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/tiktok.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+        "download_detour": "节点选择"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+        "download_detour": "节点选择"
+      }
+    ],
+    "final": "漏网之鱼",
+    "auto_detect_interface": true
+  }
+}
