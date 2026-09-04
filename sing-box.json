@@ -1,3 +1,9 @@
+// ==============================================================================
+// Sing-box 官方客户端标准配置模板 (适用于 Sing-box 1.14.0+)
+// 功能特色：防 DNS / WebRTC 泄露、Fake-IP 分流、SagerNet 二进制规则集、零报错启动
+// 提示：Sing-box 官方内核原生支持 // 单行注释与 /* 多行注释 */
+// ==============================================================================
+
 {
   "$schema": "https://raw.githubusercontent.com/SagerNet/sing-box/main/schemas/config.json",
   "log": {
@@ -74,6 +80,12 @@
     "strategy": "ipv4_only",
     "reverse_mapping": true
   },
+  "http_clients": [
+    {
+      "tag": "default_http",
+      "detour": "direct"
+    }
+  ],
   "inbounds": [
     {
       "type": "mixed",
@@ -93,20 +105,32 @@
     }
   ],
   "outbounds": [
+    // --------------------------------------------------------------------------
+    // 策略组 1：主出口选择 (Selector)
+    // 💡 说明：当你添加了新节点后，请把节点的 tag（名称）添加到下方的 outbounds 数组中
+    // --------------------------------------------------------------------------
     {
       "tag": "节点选择",
       "type": "selector",
       "outbounds": [
         "自动选择",
         "全局直连",
-        "自建-示例节点"
+        "自建-VLESS-Reality示例",
+        "自建-Hysteria2示例",
+        "自建-SS示例"
       ]
     },
+    // --------------------------------------------------------------------------
+    // 策略组 2：自动测速优选 (URLTest)
+    // 💡 说明：会自动测试下方列表里的节点延迟，并自动选用延迟最低的节点
+    // --------------------------------------------------------------------------
     {
       "tag": "自动选择",
       "type": "urltest",
       "outbounds": [
-        "自建-示例节点"
+        "自建-VLESS-Reality示例",
+        "自建-Hysteria2示例",
+        "自建-SS示例"
       ],
       "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m",
@@ -232,8 +256,104 @@
       "tag": "block",
       "type": "block"
     },
+
+    // ==========================================================================
+    // 🚀【节点添加区域 / Node Configuration Area】
+    // ==========================================================================
+    // 💡 节点导入教程与常见方案：
+    //
+    // 【方案 A：使用 Sub-Store 转换机场订阅（最推荐、最简单）】
+    //  1. 打开 Sub-Store 网页，在订阅输出格式中选择 "sing-box" 并复制生成的链接。
+    //  2. 浏览器打开该链接，复制里面 "outbounds" 下的所有节点对象块。
+    //  3. 粘贴到下方，并将节点的 "tag" 名称添加到顶部的 "节点选择" 与 "自动选择" 列表中。
+    //
+    // 【方案 B：手动填写自建 VPS 节点参数】
+    //  下方提供了常用主流协议（VLESS Reality / Hysteria 2 / VMess / TUIC / SS）的示范模板。
+    //  只需修改对应的 IP、端口、UUID、密码或公钥即可使用。
+    // ==========================================================================
+
+    // 示例 1：VLESS + XTLS + Reality 节点 (最推荐的抗封锁协议)
     {
-      "tag": "自建-示例节点",
+      "tag": "自建-VLESS-Reality示例",
+      "type": "vless",
+      "server": "1.2.3.4", // 👈 修改为你 VPS 的 IP 地址或域名
+      "server_port": 443,
+      "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // 👈 修改为你的 UUID
+      "flow": "xtls-rprx-vision",
+      "packet_encoding": "xudp",
+      "tls": {
+        "enabled": true,
+        "server_name": "apple.com", // 👈 修改为你的伪装域名 (SNI)
+        "reality": {
+          "enabled": true,
+          "public_key": "你的Reality公钥填在此处", // 👈 服务端公钥
+          "short_id": "02a1b631"               // 👈 服务端 ShortID
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+
+    // 示例 2：Hysteria 2 节点 (基于 UDP/QUIC 的超高速协议，适合大带宽)
+    {
+      "tag": "自建-Hysteria2示例",
+      "type": "hysteria2",
+      "server": "1.2.3.4", // 👈 修改为你 VPS 的 IP 地址或域名
+      "server_port": 11410,
+      "password": "your_password", // 👈 修改为你的密码
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com", // 👈 修改为你的 SNI
+        "insecure": false
+      }
+    },
+
+    // 示例 3：VMess + WebSocket + TLS 节点 (经典稳定 CDN 节点)
+    {
+      "tag": "自建-VMess-WS示例",
+      "type": "vmess",
+      "server": "your-domain.com",
+      "server_port": 443,
+      "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "security": "auto",
+      "alter_id": 0,
+      "tls": {
+        "enabled": true,
+        "server_name": "your-domain.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/your-path",
+        "headers": {
+          "Host": "your-domain.com"
+        }
+      }
+    },
+
+    // 示例 4：TUIC v5 节点 (新一代高性能 UDP 协议)
+    {
+      "tag": "自建-TUIC-v5示例",
+      "type": "tuic",
+      "server": "1.2.3.4",
+      "server_port": 11588,
+      "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "password": "your_password",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      },
+      "congestion_control": "bbr"
+    },
+
+    // 示例 5：Shadowsocks 经典节点
+    {
+      "tag": "自建-SS示例",
       "type": "shadowsocks",
       "server": "1.2.3.4",
       "server_port": 8388,
@@ -243,6 +363,7 @@
   ],
   "route": {
     "default_domain_resolver": "dns_direct",
+    "default_http_client": "default_http",
     "rules": [
       {
         "action": "sniff"
@@ -499,19 +620,12 @@
       }
     ],
     "final": "漏网之鱼",
-    "auto_detect_interface": true,
-    "default_http_client": "default_http"
+    "auto_detect_interface": true
   },
   "experimental": {
     "cache_file": {
       "enabled": true,
       "store_fakeip": true
     }
-  },
-  "http_clients": [
-    {
-      "tag": "default_http",
-      "detour": "direct"
-    }
-  ]
+  }
 }
