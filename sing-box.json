@@ -387,143 +387,131 @@
         "tag": "reject",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-category-ads-all.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-category-ads-all.srs"
       },
       {
         "tag": "icloud",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-icloud.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-icloud.srs"
       },
       {
         "tag": "apple",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-apple.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-apple.srs"
       },
       {
         "tag": "google",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-google.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-google.srs"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-youtube.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-youtube.srs"
       },
       {
         "tag": "telegram",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-telegram.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-telegram.srs"
       },
       {
         "tag": "netflix",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-netflix.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-netflix.srs"
       },
       {
         "tag": "spotify",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-spotify.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-spotify.srs"
       },
       {
         "tag": "bahamut",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-bahamut.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-bahamut.srs"
       },
       {
         "tag": "bilibili",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-bilibili.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-bilibili.srs"
       },
       {
         "tag": "ai",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-openai.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-openai.srs"
       },
       {
         "tag": "tiktok",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-tiktok.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-tiktok.srs"
       },
       {
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-microsoft.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-microsoft.srs"
       },
       {
         "tag": "gfw",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geosite/geosite-gfw.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geosite/geosite-gfw.srs"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-geolocation-!cn.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-geolocation-!cn.srs"
       },
       {
         "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-cn.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-cn.srs"
       },
       {
         "tag": "geosite-private",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-private.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-private.srs"
       },
       {
         "tag": "geoip-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs"
       },
       {
         "tag": "geoip-telegram",
         "type": "remote",
         "format": "binary",
-        "url": "https://fastly.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geoip/geoip-telegram.srs",
-        "download_detour": "direct"
+        "url": "https://fastly.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geoip/geoip-telegram.srs"
       }
     ],
     "final": "漏网之鱼",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "default_http_client": "default_http"
   },
   "experimental": {
     "cache_file": {
       "enabled": true,
       "store_fakeip": true
     }
-  }
+  },
+  "http_clients": [
+    {
+      "tag": "default_http",
+      "detour": "direct"
+    }
+  ]
 }
