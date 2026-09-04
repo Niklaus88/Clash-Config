@@ -67,22 +67,6 @@ sniffer:
       ports:
         - 443
 # ==============================================================================
-# 机场订阅配置区域 (支持填入 1 个订阅链接)
-# ==============================================================================
-# 💡 使用说明：
-# 只需在 airport 的 url 处粘贴你的订阅链接。
-proxy-providers:
-  airport:
-    type: http
-    url: "https://airport-1.com/api/v1/client/subscribe?token=xxxx"  # 👈 【机场订阅链接】粘贴在此
-    path: ./proxy_providers/airport-1.yaml
-    interval: 86400  # 自动更新间隔时间（单位：秒，86400 即 24 小时）
-    filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"  # 自动过滤官网公告、剩余流量等非节点提示
-    healthCheck:
-      enable: true
-      url: https://cp.cloudflare.com/generate_204
-      interval: 300
-
 proxy-groups:
   - interval: 300
     timeout: 5000
