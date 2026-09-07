@@ -82,8 +82,7 @@
   },
   "http_clients": [
     {
-      "tag": "default_http",
-      "detour": "direct"
+      "tag": "default_http"
     }
   ],
   "inbounds": [
