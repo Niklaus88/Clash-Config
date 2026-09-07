@@ -1,22 +1,31 @@
 # Clash / Sing-box 系列客户端配置与覆写脚本（防 DNS & WebRTC 泄漏）
 
-本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Sing-box 官方客户端 等客户端，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
+本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Clash Rule based proxy utility (iOS)、Sing-box 官方客户端 等，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
 
 ---
 
-## 三种使用方式（按需选择）
+## 四种使用方式（按需选择）
 
-### 方式 A：使用 JS 动态覆写脚本（推荐挂载已有订阅）
-适用于已有机场订阅，希望通过客户端“脚本覆写”功能自动注入防泄露规则与全彩图标。
+### 方式 A：通用 JS 动态覆写脚本（推荐桌面与安卓端）
+适用于 FlClash、Clash Verge Rev、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
 
-* 导入方式：在 [FlClash](https://github.com/chen08209/FlClash) 客户端中通过 配置 ➔ 覆写 ➔ 配置脚本 ➔ 外部获取 (URL) 填入以下链接：
+* 导入方式：在客户端配置覆写脚本中填入以下链接：
   * GitHub Raw 直连：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-script.js`
   * CDN 加速链接：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/clash-script.js`
   * Gist 订阅链接：`https://gist.githubusercontent.com/Niklaus88/f2158f5de15bf6a91b36c3f4c9223098/raw/DNS-WebRTC.js`
 
 ---
 
-### 方式 B：使用独立 YAML 配置文件（支持多订阅自动合并）
+### 方式 B：iOS 专属轻量 JS 脚本（解决 iOS 客户端内存不够报错）
+专为 [Clash Rule based proxy utility](https://apps.apple.com/us/app/clash-rule-based-proxy-utility/id6794257189) 等 iOS 客户端定制。采用内置 GeoSite/GeoIP 规则引擎，大幅降低内存占用至 2MB 以内，彻底避免 iOS Network Extension 内存溢出（连不上：内存不够），同时 100% 完整保留 WebRTC & DNS 防泄露机制。
+
+* 导入方式：在客户端配置覆写脚本中填入以下链接：
+  * GitHub Raw 直连：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-ios-script.js`
+  * CDN 加速链接：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/clash-ios-script.js`
+
+---
+
+### 方式 C：使用独立 YAML 配置文件（支持多订阅自动合并）
 适用于希望用单个配置文件直接管理 1 个或多个订阅的 Clash 用户。
 
 * 使用方法：
@@ -29,7 +38,7 @@
 
 ---
 
-### 方式 C：使用 Sing-box 独立 JSON 配置文件（官方客户端）
+### 方式 D：使用 Sing-box 独立 JSON 配置文件（官方客户端）
 适用于使用 Sing-box 官方客户端（Android / iOS / macOS / Windows / Linux）的用户。
 
 * 使用方法：
@@ -48,7 +57,7 @@
 - 防 WebRTC 泄漏：采用 `REJECT-DROP` / `block` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
 - 节点 UDP 自动开启：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
 - 精选 Koolson 全彩图标：策略组图标全面预装 Koolson/Qure 高清彩色图标。
-- 规则精简与分流优化：集成 Loyalsoldier 常用规则集，加快匹配与加载速度。
+- 规则精简与分流优化：集成常用分流规则，加快匹配与加载速度。
 
 ---
 
