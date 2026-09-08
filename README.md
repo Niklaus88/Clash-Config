@@ -7,7 +7,7 @@
 ## 四种使用方式（按需选择）
 
 ### 方式 A：通用 JS 动态覆写脚本（推荐桌面与安卓端）
-适用于 FlClash、Clash Verge Rev、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
+适用于 FlClash、Clash Verge Rev 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
 
 * 导入方式：在客户端配置覆写脚本中填入以下链接：
   * GitHub Raw 直连：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-script.js`
