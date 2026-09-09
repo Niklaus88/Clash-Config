@@ -75,12 +75,18 @@ const rules = [
   "DST-PORT,19309,REJECT-DROP",
   "DOMAIN-KEYWORD,stun,REJECT-DROP",
 
-  // 2. 屏蔽 iOS / iPadOS 系统固件更新 (OTA)
+  // 2. 屏蔽 iOS / iPadOS 系统固件更新 (OTA 包含 aaplimg CDN 回退别名)
+  "DOMAIN-KEYWORD,gdmf,REJECT",
   "DOMAIN,mesu.apple.com,REJECT",
-  "DOMAIN,gdmf.apple.com,REJECT",
-  "DOMAIN,updates-http.cdn-apple.com,REJECT",
+  "DOMAIN-SUFFIX,mesu.v.aaplimg.com,REJECT",
   "DOMAIN,updates.cdn-apple.com,REJECT",
+  "DOMAIN-SUFFIX,updates.g.aaplimg.com,REJECT",
+  "DOMAIN,updates-http.cdn-apple.com,REJECT",
   "DOMAIN,xp.apple.com,REJECT",
+  "DOMAIN-SUFFIX,xp.g.aaplimg.com,REJECT",
+  "DOMAIN,appldnld.apple.com,REJECT",
+  "DOMAIN,swscan.apple.com,REJECT",
+  "DOMAIN,skl.apple.com,REJECT",
 
   // 3. 自定义与直连白名单
   "DOMAIN-SUFFIX,googleapis.cn,节点选择",
