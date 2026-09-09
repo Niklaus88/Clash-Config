@@ -17,7 +17,7 @@
 ---
 
 ### 方式 B：iOS 专属轻量 JS 脚本（解决 iOS 客户端内存不够报错）
-专为 [Clash Rule based proxy utility](https://apps.apple.com/us/app/clash-rule-based-proxy-utility/id6794257189) 等 iOS 客户端定制。采用内置 GeoSite/GeoIP 规则引擎，大幅降低内存占用至 2MB 以内，彻底避免 iOS Network Extension 内存溢出（连不上：内存不够），同时 100% 完整保留 WebRTC & DNS 防泄露机制，并内置 iOS/iPadOS 系统固件更新屏蔽规则（防止系统静默下载 OTA 固件占用空间）。
+专为 [Clash Rule based proxy utility](https://apps.apple.com/us/app/clash-rule-based-proxy-utility/id6794257189) 等 iOS 客户端定制。采用内置 GeoSite/GeoIP 规则引擎，大幅降低内存占用至 2MB 以内，彻底避免 iOS Network Extension 内存溢出（连不上：内存不够），同时 100% 完整保留 WebRTC & DNS 防泄露机制，并**内置 iOS/iPadOS 系统固件更新屏蔽规则**（防止系统静默下载 OTA 固件占用空间）。
 
 * 导入方式：在客户端配置覆写脚本中填入以下链接：
   * GitHub Raw 直连：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-ios-script.js`
