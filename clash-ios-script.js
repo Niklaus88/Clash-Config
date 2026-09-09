@@ -75,12 +75,19 @@ const rules = [
   "DST-PORT,19309,REJECT-DROP",
   "DOMAIN-KEYWORD,stun,REJECT-DROP",
 
-  // 2. 自定义与直连白名单
+  // 2. 屏蔽 iOS / iPadOS 系统固件更新 (OTA)
+  "DOMAIN,mesu.apple.com,REJECT",
+  "DOMAIN,gdmf.apple.com,REJECT",
+  "DOMAIN,updates-http.cdn-apple.com,REJECT",
+  "DOMAIN,updates.cdn-apple.com,REJECT",
+  "DOMAIN,xp.apple.com,REJECT",
+
+  // 3. 自定义与直连白名单
   "DOMAIN-SUFFIX,googleapis.cn,节点选择",
   "DOMAIN-SUFFIX,gstatic.com,节点选择",
   "DOMAIN-SUFFIX,github.io,节点选择",
 
-  // 3. 内置轻量 GEOSITE 分流
+  // 4. 内置轻量 GEOSITE 分流
   "GEOSITE,category-ads-all,广告过滤",
   "GEOSITE,youtube,YouTube",
   "GEOSITE,google,谷歌服务",
@@ -97,12 +104,12 @@ const rules = [
   "GEOSITE,private,全局直连",
   "GEOSITE,cn,全局直连",
 
-  // 4. IP 与地理分流 (GEOIP)
+  // 5. IP 与地理分流 (GEOIP)
   "GEOIP,telegram,Telegram,no-resolve",
   "GEOIP,lan,全局直连,no-resolve",
   "GEOIP,cn,全局直连,no-resolve",
 
-  // 5. 兜底
+  // 6. 兜底
   "MATCH,漏网之鱼"
 ];
 
