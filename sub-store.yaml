@@ -5,10 +5,21 @@
 port: 7890
 socks-port: 7891
 mixed-port: 7890
-allow-lan: true
+
+# 局域网共享控制：默认 false 保证本机安全
+# 💡 若需将本机代理共享给局域网内的手机、旁路由或其它设备，请将此处改为 true
+allow-lan: false
+
+# 运行模式：rule (规则分流) / global (全局代理) / direct (全局直连)
 mode: rule
+
+# 日志级别：info / warning / error / debug / silent
 log-level: info
+
+# RESTful API 控制端口与访问密码（防御恶意网页跨站探测与未授权提取节点凭据）
+# 💡 建议保持监听 127.0.0.1，切勿轻易改为 0.0.0.0；设置自定义 secret 密钥以保障控制安全
 external-controller: 127.0.0.1:9090
+secret: "L7jTJFqsSsNMkaLNW2aj_2026"
 dns:
   enable: true
   listen: 0.0.0.0:1053
