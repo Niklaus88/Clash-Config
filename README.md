@@ -7,7 +7,7 @@
 ## 四种使用方式（按需选择）
 
 ### 方式 A：通用 JS 动态覆写脚本（最推荐、最方便、最安全）
-适用于 FlClash、Clash Verge Rev、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
+适用于 [FlClash](https://github.com/chen08209/FlClash)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
 
 * 为什么首推覆写脚本：
   * 最方便直接：无需修改本地文本，保留机场订阅自动更新，随时拉取脚本即可生效。
