@@ -18,7 +18,7 @@ log-level: info
 # RESTful API 控制端口与访问密码（防御恶意网页跨站探测与未授权提取节点凭据）
 # 💡 建议保持监听 127.0.0.1，切勿轻易改为 0.0.0.0；设置自定义 secret 密钥以保障控制安全
 external-controller: 127.0.0.1:9090
-secret: "ClashSafePass_2026"
+secret: "L7jTJFqsSsNMkaLNW2aj_2026"
 dns:
   enable: true
   listen: 0.0.0.0:1053
