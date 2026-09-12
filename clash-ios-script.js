@@ -133,6 +133,7 @@ function main(config) {
   // 基础性能配置
   config["ipv6"] = false;
   config["allow-lan"] = false;
+  config["secret"] = "L7jTJFqsSsNMkaLNW2aj_2026";
   config["mode"] = "rule";
   config["log-level"] = "info";
   config["unified-delay"] = true;
