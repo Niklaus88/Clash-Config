@@ -478,8 +478,7 @@ rules:
   - DST-PORT,19309,REJECT-DROP
   - DOMAIN-KEYWORD,stun,REJECT-DROP
   - PROCESS-NAME,tune_free_next.exe,DIRECT
-  - DOMAIN-SUFFIX,tf-pay.sayqz.com,DIRECT
-  - DOMAIN-SUFFIX,ums.sayqz.com,DIRECT
+  - DOMAIN-SUFFIX,sayqz.com,DIRECT
   - DOMAIN-SUFFIX,googleapis.cn,节点选择
   - DOMAIN-SUFFIX,gstatic.com,节点选择
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
@@ -509,3 +508,4 @@ rules:
   - GEOIP,LAN,全局直连,no-resolve
   - GEOIP,CN,全局直连,no-resolve
   - MATCH,漏网之鱼
+
