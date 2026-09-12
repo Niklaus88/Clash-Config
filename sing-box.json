@@ -408,8 +408,7 @@
       },
       {
         "domain_suffix": [
-          "tf-pay.sayqz.com",
-          "ums.sayqz.com"
+          "sayqz.com"
         ],
         "outbound": "direct"
       },
