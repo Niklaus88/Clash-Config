@@ -194,8 +194,7 @@ const rules = [
   "DOMAIN-KEYWORD,stun,REJECT-DROP",
   // 自定义规则
   "PROCESS-NAME,tune_free_next.exe,DIRECT", // TuneFreeNext 服务
-  "DOMAIN-SUFFIX,tf-pay.sayqz.com,DIRECT", // TuneFreeNext 服务
-  "DOMAIN-SUFFIX,ums.sayqz.com,DIRECT", // TuneFreeNext 服务
+  "DOMAIN-SUFFIX,sayqz.com,DIRECT", // TuneFreeNext 服务
   "DOMAIN-SUFFIX,googleapis.cn,节点选择", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,节点选择", // Google静态资源
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择", // Google Play下载服务
