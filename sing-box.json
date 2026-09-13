@@ -437,7 +437,7 @@
       },
       {
         "rule_set": "icloud",
-        "outbound": "微软服务"
+        "outbound": "苹果服务"
       },
       {
         "rule_set": "apple",
