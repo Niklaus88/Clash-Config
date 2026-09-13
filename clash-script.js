@@ -216,15 +216,15 @@ const rules = [
   "RULE-SET,google,谷歌服务",
   "RULE-SET,proxy,节点选择",
   "RULE-SET,gfw,节点选择",
-  "RULE-SET,tld-not-cn,节点选择",
+  "RULE-SET,telegramcidr,Telegram,no-resolve",
   "RULE-SET,direct,全局直连",
   "RULE-SET,lancidr,全局直连,no-resolve",
   "RULE-SET,cncidr,全局直连,no-resolve",
-  "RULE-SET,telegramcidr,Telegram,no-resolve",
   // 其他规则
   "GEOSITE,CN,全局直连",
   "GEOIP,LAN,全局直连,no-resolve",
   "GEOIP,CN,全局直连,no-resolve",
+  "RULE-SET,tld-not-cn,节点选择",
   "MATCH,漏网之鱼"
 ];
 // 代理组通用配置
