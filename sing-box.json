@@ -487,10 +487,7 @@
         "outbound": "谷歌服务"
       },
       {
-        "rule_set": [
-          "gfw",
-          "geolocation-!cn"
-        ],
+        "rule_set": "gfw",
         "outbound": "节点选择"
       },
       {
@@ -499,6 +496,10 @@
           "geoip-cn"
         ],
         "outbound": "全局直连"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "outbound": "节点选择"
       }
     ],
     "rule_set": [
