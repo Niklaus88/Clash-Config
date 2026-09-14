@@ -3,18 +3,16 @@ const domesticNameservers = [
   "https://223.5.5.5/dns-query", // 阿里DoH
   "https://doh.pub/dns-query" // 腾讯DoH
 ];
-// 国外DNS服务器
+// 国外DNS服务器（Cloudflare + Google 顶级双核心）
 const foreignNameservers = [
-  "https://208.67.222.222/dns-query", // OpenDNS
-  "https://77.88.8.8/dns-query", //YandexDNS
-  "https://1.1.1.1/dns-query", // CloudflareDNS
-  "https://8.8.4.4/dns-query", // GoogleDNS  
-
+  "https://1.1.1.1/dns-query", // Cloudflare DoH
+  "https://8.8.8.8/dns-query", // Google DoH
+  "https://8.8.4.4/dns-query"  // Google DoH 备用
 ];
 // DNS配置
 const dnsConfig = {
   "enable": true,
-  "listen": "0.0.0.0:1053",
+  "listen": "127.0.0.1:1053",
   "ipv6": false,
   "prefer-h3": false,
   "respect-rules": true,
