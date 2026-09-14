@@ -89,11 +89,12 @@ const rules = [
   "DOMAIN,skl.apple.com,REJECT",
 
   // 3. 自定义与直连白名单
+  "DOMAIN-SUFFIX,sayqz.com,DIRECT",
   "DOMAIN-SUFFIX,googleapis.cn,节点选择",
   "DOMAIN-SUFFIX,gstatic.com,节点选择",
   "DOMAIN-SUFFIX,github.io,节点选择",
 
-  // 4. 内置轻量 GEOSITE 分流
+  // 4. 内置轻量 GEOSITE 专业分流
   "GEOSITE,category-ads-all,广告过滤",
   "GEOSITE,youtube,YouTube",
   "GEOSITE,google,谷歌服务",
@@ -106,16 +107,21 @@ const rules = [
   "GEOSITE,bilibili,哔哩哔哩港澳台",
   "GEOSITE,apple,苹果服务",
   "GEOSITE,microsoft,微软服务",
+
+  // 5. 明确被墙服务走代理
   "GEOSITE,gfw,节点选择",
+
+  // 6. 国内白名单优先直连（保障国内服务精准直连、绝不误走代理消耗流量）
   "GEOSITE,private,全局直连",
   "GEOSITE,cn,全局直连",
-
-  // 5. IP 与地理分流 (GEOIP)
   "GEOIP,telegram,Telegram,no-resolve",
   "GEOIP,lan,全局直连,no-resolve",
   "GEOIP,cn,全局直连,no-resolve",
 
-  // 6. 兜底
+  // 7. 境外非中国域名全量走代理（彻底解决类似 browserleaks 等未被 GFW 屏蔽的境外测试站走直连暴露 IP 的问题）
+  "GEOSITE,geolocation-!cn,节点选择",
+
+  // 8. 兜底
   "MATCH,漏网之鱼"
 ];
 
@@ -297,4 +303,3 @@ function main(config) {
 
   return config;
 }
-
