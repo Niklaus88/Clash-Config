@@ -191,6 +191,9 @@ const rules = [
   "DST-PORT,19309,REJECT-DROP",
   "DOMAIN-KEYWORD,stun,REJECT-DROP",
   // 自定义规则
+  "DOMAIN-SUFFIX,browserleaks.com,节点选择",
+  "DOMAIN-SUFFIX,browserleaks.org,节点选择",
+  "DOMAIN-SUFFIX,ipleak.net,节点选择",
   "PROCESS-NAME,tune_free_next.exe,DIRECT", // TuneFreeNext 服务
   "DOMAIN-SUFFIX,sayqz.com,DIRECT", // TuneFreeNext 服务
   "DOMAIN-SUFFIX,googleapis.cn,节点选择", // Google服务
