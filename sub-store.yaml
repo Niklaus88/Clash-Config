@@ -22,7 +22,7 @@ external-controller: 127.0.0.1:9090
 secret: "Clash_ChangeMe_2026"
 dns:
   enable: true
-  listen: 0.0.0.0:1053
+  listen: 127.0.0.1:1053
   ipv6: false
   prefer-h3: false
   respect-rules: true
@@ -47,9 +47,8 @@ dns:
     - 223.5.5.5
     - 1.2.4.8
   nameserver:
-    - https://208.67.222.222/dns-query
-    - https://77.88.8.8/dns-query
     - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
     - https://8.8.4.4/dns-query
   proxy-server-nameserver:
     - https://223.5.5.5/dns-query
