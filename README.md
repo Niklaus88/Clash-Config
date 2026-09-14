@@ -60,7 +60,7 @@
 ---
 
 ### 方式 E：OpenWrt / OpenClash 专属配置（软路由网关）
-专为 OpenWrt 路由器上的 OpenClash 插件定制。支持局域网设备全屋自动翻墙，全屋防御 DNS / WebRTC 泄露，精简了单机 Windows 进程规则，并支持在配置内同时挂载 1~3 个机场订阅自动聚合。
+专为 OpenWrt 路由器上的 OpenClash 插件定制。支持局域网设备全屋自动科学上网，全屋防御 DNS / WebRTC 泄露，精简了单机 Windows 进程规则，并支持在配置内同时挂载 1~3 个机场订阅自动聚合。
 
 * 使用方法：
   1. 下载 [openclash.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/openclash.yaml) 文件。
