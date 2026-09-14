@@ -9,17 +9,17 @@ const domesticNameservers = [
   "https://doh.pub/dns-query"
 ];
 
-// 国外 DoH
+// 国外 DoH（Cloudflare + Google 顶级双核心）
 const foreignNameservers = [
   "https://1.1.1.1/dns-query",
-  "https://8.8.4.4/dns-query",
-  "https://208.67.222.222/dns-query"
+  "https://8.8.8.8/dns-query",
+  "https://8.8.4.4/dns-query"
 ];
 
 // DNS 配置（极致防泄露 + 内存优化）
 const dnsConfig = {
   "enable": true,
-  "listen": "0.0.0.0:1053",
+  "listen": "127.0.0.1:1053",
   "ipv6": false,
   "prefer-h3": false,
   "respect-rules": true,
@@ -297,3 +297,4 @@ function main(config) {
 
   return config;
 }
+
