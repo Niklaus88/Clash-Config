@@ -509,3 +509,4 @@ rules:
   - GEOIP,CN,全局直连,no-resolve
   - RULE-SET,tld-not-cn,节点选择
   - MATCH,漏网之鱼
+
