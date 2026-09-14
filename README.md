@@ -4,10 +4,10 @@
 
 ---
 
-## 四种使用方式（按需选择）
+## 五种使用方式（按需选择）
 
 ### 方式 A：通用 JS 动态覆写脚本（最推荐、最方便、最安全）
-适用于 [FlClash](https://github.com/chen08209/FlClash)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
+适用于 FlClash、Clash Verge Rev、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
 
 * 为什么首推覆写脚本：
   * 最方便直接：无需修改本地文本，保留机场订阅自动更新，随时拉取脚本即可生效。
@@ -56,6 +56,19 @@
 
 * Raw 链接：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/sing-box.json`
 * CDN 加速：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/sing-box.json`
+
+---
+
+### 方式 E：OpenWrt / OpenClash 专属配置（软路由网关）
+专为 OpenWrt 路由器上的 OpenClash 插件定制。支持局域网设备全屋自动翻墙，全屋防御 DNS / WebRTC 泄露，精简了单机 Windows 进程规则，并支持在配置内同时挂载 1~3 个机场订阅自动聚合。
+
+* 使用方法：
+  1. 下载 [openclash.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/openclash.yaml) 文件。
+  2. 用文本编辑器打开，在 `proxy-providers:` 区域将 `url:` 替换为你自己的机场订阅链接。
+  3. 登录 OpenWrt 路由器后台，打开 OpenClash ➔ 【配置订阅】（或【配置管理】），上传并应用该配置即可。
+
+* Raw 链接：`https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/openclash.yaml`
+* CDN 加速：`https://cdn.jsdelivr.net/gh/Niklaus88/Clash-Config@main/openclash.yaml`
 
 ---
 
