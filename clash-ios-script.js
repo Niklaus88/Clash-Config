@@ -88,7 +88,10 @@ const rules = [
   "DOMAIN,swscan.apple.com,REJECT",
   "DOMAIN,skl.apple.com,REJECT",
 
-  // 3. 自定义与直连白名单
+  // 3. 自定义规则与核心检测站专线
+  "DOMAIN-SUFFIX,browserleaks.com,节点选择",
+  "DOMAIN-SUFFIX,browserleaks.org,节点选择",
+  "DOMAIN-SUFFIX,ipleak.net,节点选择",
   "DOMAIN-SUFFIX,sayqz.com,DIRECT",
   "DOMAIN-SUFFIX,googleapis.cn,节点选择",
   "DOMAIN-SUFFIX,gstatic.com,节点选择",
@@ -303,3 +306,4 @@ function main(config) {
 
   return config;
 }
+
