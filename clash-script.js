@@ -175,6 +175,12 @@ const ruleProviders = {
     "url": "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/TikTok.txt",
     "path": "./ruleset/xiaolin-007/TikTok.yaml"    
   },
+  "Microsoft": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt",
+    "path": "./ruleset/xiaolin-007/Microsoft.yaml"    
+  },
 };
 // 规则
 const rules = [
@@ -207,6 +213,7 @@ const rules = [
   "RULE-SET,reject,广告过滤",
   "RULE-SET,icloud,苹果服务",
   "RULE-SET,apple,苹果服务",
+  "RULE-SET,Microsoft,微软服务",
   "RULE-SET,YouTube,YouTube",
   "RULE-SET,Netflix,Netflix",
   "RULE-SET,bahamut,动画疯",
