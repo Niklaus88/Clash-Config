@@ -1,6 +1,6 @@
 # 防 DNS & WebRTC 泄漏配置
 
-本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Clash Rule based proxy utility (iOS)、Sing-box 官方客户端 等，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
+本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Clash Rule based proxy utility (iOS)、Sing-box 官方客户端 等，主要解决 DNS 泄漏与 WebRTC 泄漏问题。
 
 ---
 
