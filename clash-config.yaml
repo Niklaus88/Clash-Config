@@ -464,6 +464,13 @@ rule-providers:
     behavior: classical
     url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/TikTok.txt
     path: ./ruleset/xiaolin-007/TikTok.yaml
+  Microsoft:
+    type: http
+    format: yaml
+    interval: 86400
+    behavior: classical
+    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt
+    path: ./ruleset/xiaolin-007/Microsoft.yaml
 rules:
   - DST-PORT,3478,REJECT-DROP
   - DST-PORT,5349,REJECT-DROP
@@ -491,6 +498,7 @@ rules:
   - RULE-SET,reject,广告过滤
   - RULE-SET,icloud,苹果服务
   - RULE-SET,apple,苹果服务
+  - RULE-SET,Microsoft,微软服务
   - RULE-SET,YouTube,YouTube
   - RULE-SET,Netflix,Netflix
   - RULE-SET,bahamut,动画疯
