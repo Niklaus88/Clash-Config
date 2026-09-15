@@ -404,7 +404,12 @@
         "domain_suffix": [
           "googleapis.cn",
           "gstatic.com",
-          "xn--ngstr-lra8j.com",
+          "xn--ngstr-lra8j.com"
+        ],
+        "outbound": "谷歌服务"
+      },
+      {
+        "domain_suffix": [
           "github.io"
         ],
         "outbound": "节点选择"
