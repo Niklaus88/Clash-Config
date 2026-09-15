@@ -401,18 +401,6 @@
         "outbound": "节点选择"
       },
       {
-        "process_name": [
-          "tune_free_next.exe"
-        ],
-        "outbound": "direct"
-      },
-      {
-        "domain_suffix": [
-          "sayqz.com"
-        ],
-        "outbound": "direct"
-      },
-      {
         "domain_suffix": [
           "googleapis.cn",
           "gstatic.com",
