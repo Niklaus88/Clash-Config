@@ -200,8 +200,6 @@ const rules = [
   "DOMAIN-SUFFIX,browserleaks.com,节点选择",
   "DOMAIN-SUFFIX,browserleaks.org,节点选择",
   "DOMAIN-SUFFIX,ipleak.net,节点选择",
-  "PROCESS-NAME,tune_free_next.exe,DIRECT", // TuneFreeNext 服务
-  "DOMAIN-SUFFIX,sayqz.com,DIRECT", // TuneFreeNext 服务
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务", // Google静态资源
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务", // Google Play下载服务
