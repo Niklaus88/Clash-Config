@@ -77,7 +77,7 @@
 - 防 DNS 泄漏：内置安全 DoH（Cloudflare / Google），国内域名智能走 DNSPod / AliDNS 分流，兼顾隐私与网速。
 - 弹性 WebRTC 防泄漏体系：首创“受信会议软件放行 + 专属策略组总闸门”架构，内置 Zoom/Discord/微信/FaceTime 会议白名单保障日常通话畅通；同时设立【WebRTC防护】策略组（默认 `REJECT-DROP` 静默丢弃），既彻底掐断未知网页探针泄露真实 IP，又能一键弹性切换节点应急。
 - 接口安全加固与隔离：YAML 配置预置 API 访问密钥并关闭局域网共享，防御跨站窃取凭据；JS 覆写脚本由客户端原生托管随机 Token，彻底免除 API 暴露隐患。
-- 节点 UDP 自动开启：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
+- 节点 UDP 配置统一启用：自动为静态节点及 Proxy Provider 加载的节点启用 UDP 属性配置（实际 UDP 可用性取决于节点协议与服务端是否提供支持），保障 QUIC 与实时语音流量正常调度。
 - 18 组精选全彩图标体系：预装 Koolson/Qure 高清彩色图标与官方 WebRTC 彩色标识，全量托管于自建库与 fastly.jsdelivr.net 镜像 CDN，保障大陆裸网环境下毫秒级秒开不裂开。
 - 规则精简与分流优化：集成常用分流规则，加快匹配与加载速度。
 
@@ -100,3 +100,4 @@
 - [Koolson](https://github.com/Koolson/Qure)
 - [SagerNet / sing-box](https://github.com/SagerNet/sing-box)
 - [Niklaus88 / icon](https://github.com/Niklaus88/icon)
+
