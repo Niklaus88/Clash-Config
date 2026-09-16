@@ -99,5 +99,5 @@
 - [Loyalsoldier](https://github.com/Loyalsoldier/clash-rules)
 - [Koolson](https://github.com/Koolson/Qure)
 - [SagerNet / sing-box](https://github.com/SagerNet/sing-box)
-- [Niklaus88 / icon](https://github.com/Niklaus88/icon)
+
 
