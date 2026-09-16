@@ -92,6 +92,8 @@ proxy-providers:
     type: http
     url: "https://airport-1.com/api/v1/client/subscribe?token=xxxx"  # 👈 【第 1 个机场订阅链接】粘贴在此
     path: ./proxy_providers/airport-1.yaml
+    override:
+      udp: true
     interval: 86400  # 自动更新间隔时间（单位：秒，86400 即 24 小时）
     filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"  # 自动过滤官网公告、剩余流量等非节点提示
     healthCheck:
@@ -103,7 +105,11 @@ proxy-providers:
     type: http
     url: "https://airport-2.com/api/v1/client/subscribe?token=yyyy"  # 👈 【第 2 个机场订阅链接】（若无此订阅整段删除即可）
     path: ./proxy_providers/airport-2.yaml
+    override:
+      udp: true
     interval: 86400
+    override:
+      udp: true
     filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
     healthCheck:
       enable: true
@@ -114,6 +120,8 @@ proxy-providers:
     type: http
     url: "https://airport-3.com/api/v1/client/subscribe?token=zzzz"  # 👈 【第 3 个机场订阅链接】（若无此订阅整段删除即可）
     path: ./proxy_providers/airport-3.yaml
+    override:
+      udp: true
     interval: 86400
     filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
     healthCheck:
