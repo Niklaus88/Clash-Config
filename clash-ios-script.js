@@ -310,10 +310,23 @@ function main(config) {
   delete config["rule-providers"];
   config["rules"] = rules;
 
-  // 强制开启节点 UDP 支持 WebRTC / QUIC
-  if (config["proxies"]) {
+  // 1. 遍历静态自建节点，开启 UDP 配置
+  if (Array.isArray(config["proxies"])) {
     config["proxies"].forEach(proxy => {
-      proxy.udp = true;
+      if (proxy && typeof proxy === "object") {
+        proxy.udp = true;
+      }
+    });
+  }
+
+  // 2. 为所有 Proxy Provider 加载的节点统一启用 UDP 配置
+  if (config["proxy-providers"] && typeof config["proxy-providers"] === "object") {
+    Object.values(config["proxy-providers"]).forEach(provider => {
+      if (!provider || typeof provider !== "object") return;
+      provider.override = {
+        ...(provider.override || {}),
+        udp: true
+      };
     });
   }
 
