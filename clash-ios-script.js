@@ -169,7 +169,7 @@ function main(config) {
       "type": "select",
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png"
     },
     {
       ...groupBaseOption,
@@ -177,7 +177,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png"
     },
     {
       ...groupBaseOption,
@@ -185,7 +185,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png"
     },
     {
       ...groupBaseOption,
@@ -193,7 +193,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png"
     },
     {
       ...groupBaseOption,
@@ -201,7 +201,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png"
     },
     {
       ...groupBaseOption,
@@ -209,7 +209,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ChatGPT/ChatGPT4.png"
+      "icon": "https://fastly.jsdelivr.net/gh/chxm1023/Script_X@main/icon/ChatGPT/ChatGPT4.png"
     },
     {
       ...groupBaseOption,
@@ -217,7 +217,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png"
     },
     {
       ...groupBaseOption,
@@ -225,7 +225,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png"
     },
     {
       ...groupBaseOption,
@@ -233,7 +233,7 @@ function main(config) {
       "type": "select",
       "proxies": ["全局直连", "节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png"
     },
     {
       ...groupBaseOption,
@@ -241,7 +241,7 @@ function main(config) {
       "type": "select",
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png"
     },
     {
       ...groupBaseOption,
@@ -249,7 +249,7 @@ function main(config) {
       "type": "select",
       "proxies": ["全局直连", "节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/iCloud.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png"
     },
     {
       ...groupBaseOption,
@@ -258,7 +258,7 @@ function main(config) {
       "proxies": ["节点选择"],
       "include-all": true,
       "filter": "(?i)台|tw|TW",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Bahamut.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png"
     },
     {
       ...groupBaseOption,
@@ -267,14 +267,14 @@ function main(config) {
       "proxies": ["全局直连", "节点选择"],
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/bilibili.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png"
     },
     {
       ...groupBaseOption,
       "name": "广告过滤",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Advertising.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png"
     },
     {
       ...groupBaseOption,
@@ -282,14 +282,14 @@ function main(config) {
       "type": "select",
       "proxies": ["DIRECT", "节点选择"],
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png"
     },
     {
       ...groupBaseOption,
       "name": "全局拦截",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Reject.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Reject.png"
     },
     {
       ...groupBaseOption,
@@ -298,7 +298,7 @@ function main(config) {
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png"
     }
   ];
 
