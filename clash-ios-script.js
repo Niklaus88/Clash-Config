@@ -62,18 +62,23 @@ const groupBaseOption = {
 
 // 规则集：采用内置轻量 GeoSite / GeoIP，杜绝大内存外部规则集
 const rules = [
+  // 受信会议与实时音视频软件
+  "DOMAIN-SUFFIX,zoom.us,全局直连",
+  "DOMAIN-SUFFIX,zoom.com,全局直连",
+  "DOMAIN-SUFFIX,discord.com,节点选择",
+  "DOMAIN-SUFFIX,discord.gg,节点选择",
   // 1. 核心拦截 WebRTC STUN 探测 (解决 WebRTC 泄漏)
-  "DST-PORT,3478,REJECT-DROP",
-  "DST-PORT,5349,REJECT-DROP",
-  "DST-PORT,19302,REJECT-DROP",
-  "DST-PORT,19303,REJECT-DROP",
-  "DST-PORT,19304,REJECT-DROP",
-  "DST-PORT,19305,REJECT-DROP",
-  "DST-PORT,19306,REJECT-DROP",
-  "DST-PORT,19307,REJECT-DROP",
-  "DST-PORT,19308,REJECT-DROP",
-  "DST-PORT,19309,REJECT-DROP",
-  "DOMAIN-KEYWORD,stun,REJECT-DROP",
+  "DST-PORT,3478,WebRTC防护",
+  "DST-PORT,5349,WebRTC防护",
+  "DST-PORT,19302,WebRTC防护",
+  "DST-PORT,19303,WebRTC防护",
+  "DST-PORT,19304,WebRTC防护",
+  "DST-PORT,19305,WebRTC防护",
+  "DST-PORT,19306,WebRTC防护",
+  "DST-PORT,19307,WebRTC防护",
+  "DST-PORT,19308,WebRTC防护",
+  "DST-PORT,19309,WebRTC防护",
+  "DOMAIN-KEYWORD,stun,WebRTC防护",
 
   // 2. 屏蔽 iOS / iPadOS 系统固件更新 (OTA 包含 aaplimg CDN 回退别名)
   "DOMAIN-KEYWORD,gdmf,REJECT",
