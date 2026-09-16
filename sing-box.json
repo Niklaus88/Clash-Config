@@ -208,6 +208,14 @@
       ]
     },
     {
+      "tag": "iCloud服务",
+      "type": "selector",
+      "outbounds": [
+        "全局直连",
+        "节点选择"
+      ]
+    },
+    {
       "tag": "动画疯",
       "type": "selector",
       "outbounds": [
@@ -430,7 +438,7 @@
       },
       {
         "rule_set": "icloud",
-        "outbound": "苹果服务"
+        "outbound": "iCloud服务"
       },
       {
         "rule_set": "apple",
