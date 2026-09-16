@@ -339,6 +339,18 @@ proxy-groups:
     include-all: true
     filter: ^(?!.*(官网|套餐|流量|异常|剩余)).*$
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+  - interval: 300
+    timeout: 5000
+    url: https://cp.cloudflare.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
+    name: WebRTC防护
+    type: select
+    proxies:
+      - REJECT-DROP
+      - 节点选择
+    icon: https://fastly.jsdelivr.net/gh/Niklaus88/icon@main/Webrtc.png
 rule-providers:
   reject:
     type: http
@@ -488,17 +500,24 @@ rule-providers:
     url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt
     path: ./ruleset/xiaolin-007/Microsoft.yaml
 rules:
-  - DST-PORT,3478,REJECT-DROP
-  - DST-PORT,5349,REJECT-DROP
-  - DST-PORT,19302,REJECT-DROP
-  - DST-PORT,19303,REJECT-DROP
-  - DST-PORT,19304,REJECT-DROP
-  - DST-PORT,19305,REJECT-DROP
-  - DST-PORT,19306,REJECT-DROP
-  - DST-PORT,19307,REJECT-DROP
-  - DST-PORT,19308,REJECT-DROP
-  - DST-PORT,19309,REJECT-DROP
-  - DOMAIN-KEYWORD,stun,REJECT-DROP
+  # 受信会议与实时音视频软件（优先放行或走代理）
+  - PROCESS-NAME,Zoom.exe,全局直连
+  - PROCESS-NAME,Discord.exe,节点选择
+  - DOMAIN-SUFFIX,zoom.us,全局直连
+  - DOMAIN-SUFFIX,zoom.com,全局直连
+  - DOMAIN-SUFFIX,discord.com,节点选择
+  - DOMAIN-SUFFIX,discord.gg,节点选择
+  - DST-PORT,3478,WebRTC防护
+  - DST-PORT,5349,WebRTC防护
+  - DST-PORT,19302,WebRTC防护
+  - DST-PORT,19303,WebRTC防护
+  - DST-PORT,19304,WebRTC防护
+  - DST-PORT,19305,WebRTC防护
+  - DST-PORT,19306,WebRTC防护
+  - DST-PORT,19307,WebRTC防护
+  - DST-PORT,19308,WebRTC防护
+  - DST-PORT,19309,WebRTC防护
+  - DOMAIN-KEYWORD,stun,WebRTC防护
   - DOMAIN-SUFFIX,googleapis.cn,谷歌服务
   - DOMAIN-SUFFIX,gstatic.com,谷歌服务
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务
