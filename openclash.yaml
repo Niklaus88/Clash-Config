@@ -499,7 +499,6 @@ rules:
   - DST-PORT,19308,REJECT-DROP
   - DST-PORT,19309,REJECT-DROP
   - DOMAIN-KEYWORD,stun,REJECT-DROP
-  - DOMAIN-SUFFIX,sayqz.com,DIRECT
   - DOMAIN-SUFFIX,googleapis.cn,谷歌服务
   - DOMAIN-SUFFIX,gstatic.com,谷歌服务
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务
