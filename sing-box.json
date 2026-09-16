@@ -248,6 +248,14 @@
       ]
     },
     {
+      "tag": "WebRTC防护",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "节点选择"
+      ]
+    },
+    {
       "tag": "全局直连",
       "type": "direct"
     },
@@ -380,6 +388,32 @@
         "action": "hijack-dns"
       },
       {
+        "process_name": [
+          "Zoom.exe"
+        ],
+        "outbound": "全局直连"
+      },
+      {
+        "process_name": [
+          "Discord.exe"
+        ],
+        "outbound": "节点选择"
+      },
+      {
+        "domain_suffix": [
+          "zoom.us",
+          "zoom.com"
+        ],
+        "outbound": "全局直连"
+      },
+      {
+        "domain_suffix": [
+          "discord.com",
+          "discord.gg"
+        ],
+        "outbound": "节点选择"
+      },
+      {
         "port": [
           3478,
           5349,
@@ -392,13 +426,13 @@
           19308,
           19309
         ],
-        "outbound": "block"
+        "outbound": "WebRTC防护"
       },
       {
         "domain_keyword": [
           "stun"
         ],
-        "outbound": "block"
+        "outbound": "WebRTC防护"
       },
       {
         "clash_mode": "Direct",
