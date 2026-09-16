@@ -92,6 +92,7 @@ const rules = [
   "DOMAIN-SUFFIX,browserleaks.com,节点选择",
   "DOMAIN-SUFFIX,browserleaks.org,节点选择",
   "DOMAIN-SUFFIX,ipleak.net,节点选择",
+  "DOMAIN-SUFFIX,sayqz.com,DIRECT",
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务",
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务",
   "DOMAIN-SUFFIX,github.io,节点选择",
@@ -108,6 +109,7 @@ const rules = [
   "GEOSITE,bahamut,动画疯",
   "GEOSITE,bilibili,哔哩哔哩港澳台",
   "GEOSITE,apple,苹果服务",
+  "GEOSITE,icloud,iCloud服务",
   "GEOSITE,microsoft,微软服务",
 
   // 5. 明确被墙服务走代理
@@ -240,6 +242,14 @@ function main(config) {
       "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "iCloud服务",
+      "type": "select",
+      "proxies": ["全局直连", "节点选择"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/iCloud.png"
     },
     {
       ...groupBaseOption,
