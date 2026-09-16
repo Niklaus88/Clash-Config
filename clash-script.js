@@ -39,12 +39,12 @@ const dnsConfig = {
     // 微信快速登录检测失败
     "localhost.work.weixin.qq.com"
   ],
-  "default-nameserver": ["223.5.5.5","1.2.4.8"],//可修改成自己ISP的DNS
+  "default-nameserver": ["223.5.5.5", "119.29.29.29"], // 可修改成自己 ISP 的 DNS
   "nameserver": [...foreignNameservers],
-  "proxy-server-nameserver":[...domesticNameservers],
-  "direct-nameserver":[...domesticNameservers],
+  "proxy-server-nameserver": [...domesticNameservers],
+  "direct-nameserver": [...domesticNameservers],
   "nameserver-policy": {
-  "geosite:private,cn": domesticNameservers
+    "geosite:private,cn": domesticNameservers
   }
 };
 // 规则集通用配置
@@ -283,7 +283,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "谷歌服务",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png"
     },
@@ -291,7 +291,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "YouTube",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png"
     },
@@ -299,7 +299,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Telegram",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png"
     },
@@ -307,7 +307,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Spotify",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png"
     },
@@ -331,7 +331,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "Netflix",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png"
     },
@@ -339,7 +339,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "微软服务",
       "type": "select",
-      "proxies": ["全局直连","节点选择"],
+      "proxies": ["全局直连", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png"
     },
@@ -347,7 +347,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "苹果服务",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png"
     },
@@ -355,7 +355,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "iCloud服务",
       "type": "select",
-      "proxies": ["全局直连","节点选择"],
+      "proxies": ["全局直连", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/iCloud.png"
     },
@@ -372,7 +372,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "哔哩哔哩港澳台",
       "type": "select",
-      "proxies": ["全局直连","节点选择"],
+      "proxies": ["全局直连", "节点选择"],
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/bilibili.png"
@@ -388,7 +388,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "全局直连",
       "type": "select",
-      "proxies": ["DIRECT","节点选择"],
+      "proxies": ["DIRECT", "节点选择"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Direct.png"
     },
@@ -403,26 +403,24 @@ function main(config) {
       ...groupBaseOption,
       "name": "漏网之鱼",
       "type": "select",
-      "proxies": ["节点选择","全局直连"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png"
     }
   ];
 
-  // 覆盖原配置中的规则
+  // 覆盖原配置中的规则与规则集
   config["rule-providers"] = ruleProviders;
   config["rules"] = rules;
-// 添加判断
-  if(config["proxies"]) {
+
+  // 遍历节点自动开启 UDP 支持 WebRTC / QUIC
+  if (config["proxies"]) {
     config["proxies"].forEach(proxy => {
-      // 为每个节点设置 udp = true
-      proxy.udp = true
-
-    })
+      proxy.udp = true;
+    });
   }
-  // 返回修改后的配置
-  return config;
 
+  return config;
 }
 
