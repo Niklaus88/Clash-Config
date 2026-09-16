@@ -92,7 +92,6 @@ const rules = [
   "DOMAIN-SUFFIX,browserleaks.com,节点选择",
   "DOMAIN-SUFFIX,browserleaks.org,节点选择",
   "DOMAIN-SUFFIX,ipleak.net,节点选择",
-  "DOMAIN-SUFFIX,sayqz.com,DIRECT",
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务",
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务",
   "DOMAIN-SUFFIX,github.io,节点选择",
