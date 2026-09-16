@@ -254,6 +254,19 @@ proxy-groups:
     lazy: true
     max-failed-times: 3
     hidden: false
+    name: iCloud服务
+    type: select
+    proxies:
+      - 全局直连
+      - 节点选择
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/iCloud.png
+  - interval: 300
+    timeout: 5000
+    url: https://cp.cloudflare.com/generate_204
+    lazy: true
+    max-failed-times: 3
+    hidden: false
     name: 动画疯
     type: select
     proxies:
@@ -486,6 +499,7 @@ rules:
   - DST-PORT,19308,REJECT-DROP
   - DST-PORT,19309,REJECT-DROP
   - DOMAIN-KEYWORD,stun,REJECT-DROP
+  - DOMAIN-SUFFIX,sayqz.com,DIRECT
   - DOMAIN-SUFFIX,googleapis.cn,谷歌服务
   - DOMAIN-SUFFIX,gstatic.com,谷歌服务
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务
@@ -494,8 +508,8 @@ rules:
   - RULE-SET,applications,全局直连
   - RULE-SET,private,全局直连
   - RULE-SET,reject,广告过滤
-  - RULE-SET,icloud,苹果服务
   - RULE-SET,apple,苹果服务
+  - RULE-SET,icloud,iCloud服务
   - RULE-SET,Microsoft,微软服务
   - RULE-SET,YouTube,YouTube
   - RULE-SET,Netflix,Netflix
