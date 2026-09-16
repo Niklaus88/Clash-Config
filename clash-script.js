@@ -412,6 +412,13 @@ function main(config) {
       "include-all": true,
       "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "WebRTC防护",
+      "type": "select",
+      "proxies": ["REJECT-DROP", "节点选择"],
+      "icon": "https://fastly.jsdelivr.net/gh/Niklaus88/icon@main/Webrtc.png"
     }
   ];
 
