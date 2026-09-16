@@ -1,12 +1,12 @@
-# 防 DNS & WebRTC 泄漏配置
+# Clash / Sing-box 系列客户端配置与覆写脚本（防 DNS & WebRTC 泄漏）
 
-本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Clash Rule based proxy utility (iOS)、Sing-box 官方客户端 等，主要解决 DNS 泄漏与 WebRTC 泄漏问题。
+本项目提供经优化测试的 JavaScript (JS) 动态覆写脚本、独立 YAML 配置文件 以及 独立 JSON 配置文件，适用于 FlClash、Clash Verge、Clash Rule based proxy utility (iOS)、Sing-box 官方客户端 等，彻底解决 DNS 泄漏与 WebRTC 泄漏问题。
 
 ---
 
 ## 五种使用方式（按需选择）
 
-### 方式 A：通用 JS 动态覆写脚本（最推荐）
+### 方式 A：通用 JS 动态覆写脚本（最推荐、最方便、最安全）
 适用于 FlClash、Clash Verge Rev、Mihomo Party 等桌面和安卓客户端，挂载已有订阅并自动注入防泄露规则与全彩图标。
 
 * 为什么首推覆写脚本：
@@ -60,7 +60,7 @@
 ---
 
 ### 方式 E：OpenWrt / OpenClash 专属配置（软路由网关）
-专为 OpenWrt 路由器上的 OpenClash 插件定制。支持局域网设备全屋自动科学上网，全屋防御 DNS / WebRTC 泄露，精简了单机 Windows 进程规则，并支持在配置内同时挂载 1~3 个机场订阅自动聚合。
+专为 OpenWrt 路由器上的 OpenClash 插件定制。支持局域网设备全屋自动翻墙，全屋防御 DNS / WebRTC 泄露，精简了单机 Windows 进程规则，并支持在配置内同时挂载 1~3 个机场订阅自动聚合。
 
 * 使用方法：
   1. 下载 [openclash.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/openclash.yaml) 文件。
@@ -74,7 +74,7 @@
 
 ## 功能特色
 
-- 防 DNS 泄漏：内置安全 DoH（Cloudflare / Google / OpenDNS），国内域名智能走 DNSPod / AliDNS 分流，兼顾隐私与网速。
+- 防 DNS 泄漏：内置安全 DoH（Cloudflare / Google），国内域名智能走 DNSPod / AliDNS 分流，兼顾隐私与网速。
 - 防 WebRTC 泄漏：采用 `REJECT-DROP` / `block` 静默丢弃策略拦截 3478 / 5349 / 19302-19309 等 STUN 端口，彻底解决浏览器真实 IP 泄漏。
 - 接口安全加固与隔离：YAML 配置预置 API 访问密钥并关闭局域网共享，防御跨站窃取凭据；JS 覆写脚本由客户端原生托管随机 Token，彻底免除 API 暴露隐患。
 - 节点 UDP 自动开启：遍历代理节点并开启 `udp: true`，确保 QUIC 与 UDP 代理流量正常传输。
