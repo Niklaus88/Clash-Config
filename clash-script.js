@@ -200,6 +200,8 @@ const rules = [
   "DOMAIN-SUFFIX,browserleaks.com,节点选择",
   "DOMAIN-SUFFIX,browserleaks.org,节点选择",
   "DOMAIN-SUFFIX,ipleak.net,节点选择",
+  "PROCESS-NAME,tune_free_next.exe,DIRECT", // TuneFreeNext 服务
+  "DOMAIN-SUFFIX,sayqz.com,DIRECT", // TuneFreeNext 服务
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务", // Google静态资源
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务", // Google Play下载服务
@@ -209,8 +211,8 @@ const rules = [
   "RULE-SET,applications,全局直连",
   "RULE-SET,private,全局直连",
   "RULE-SET,reject,广告过滤",
-  "RULE-SET,icloud,苹果服务",
-  "RULE-SET,apple,苹果服务",
+    "RULE-SET,apple,苹果服务",
+  "RULE-SET,icloud,iCloud服务",
   "RULE-SET,Microsoft,微软服务",
   "RULE-SET,YouTube,YouTube",
   "RULE-SET,Netflix,Netflix",
@@ -348,6 +350,14 @@ function main(config) {
       "proxies": ["节点选择","全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "iCloud服务",
+      "type": "select",
+      "proxies": ["全局直连","节点选择"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/iCloud.png"
     },
     {
       ...groupBaseOption,
