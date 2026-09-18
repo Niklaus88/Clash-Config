@@ -1,4 +1,4 @@
-# Clash / Sing-box 系列配置与覆写脚本（防 DNS & WebRTC 泄漏）
+# Clash 系列配置与覆写脚本（防 DNS & WebRTC 泄漏）
 
 本项目整理了适用于 Clash 与 Sing-box 客户端的配置及 JavaScript 覆写脚本，主要用于解决日常使用中的 DNS 泄漏与 WebRTC 暴露本地真实 IP 问题，并配套了 18 个常用分流策略组及全彩图标。
 
