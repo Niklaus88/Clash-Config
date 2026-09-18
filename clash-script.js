@@ -352,7 +352,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "苹果服务",
       "type": "select",
-      "proxies": ["节点选择", "全局直连"],
+      "proxies": ["全局直连", "节点选择"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png"
     },
