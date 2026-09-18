@@ -59,7 +59,12 @@
 * BrowserLeaks：[https://browserleaks.com/dns](https://browserleaks.com/dns)
 * IPLeak：[https://ipleak.net](https://ipleak.net)
 
-> 💡 提示：网络层规则主要防范常见网页探针；若对 WebRTC 隐私有更严苛的要求，建议在浏览器端搭配 [WebRTC Control](https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm) 等扩展使用。
+> 💡 提示：
+> 
+> 1、建议开启 TUN 模式：传统的“系统代理”仅接管 HTTP/HTTPS 流量，无法拦截基于 UDP 传输的 WebRTC 探测。使用本脚本时，**强烈建议在客户端开启 TUN 模式（虚拟网卡模式）**，确保系统全量流量完整进入内核，使防泄漏与分流规则切实生效。
+> 
+> 2、网络层规则主要防范常见网页探针；若对 WebRTC 隐私有更严苛的要求，建议在浏览器端搭配 [WebRTC Control](https://chromewebstore.google.com/detail/webrtc-control/fjkmabmdepjfammlpliljpnbhleegehm) 等扩展使用。
+
 
 ---
 
