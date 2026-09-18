@@ -344,7 +344,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "微软服务",
       "type": "select",
-      "proxies": ["全局直连", "节点选择"],
+      "proxies": ["节点选择", "全局直连"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png"
     },
