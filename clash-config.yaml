@@ -249,8 +249,8 @@ proxy-groups:
     name: 苹果服务
     type: select
     proxies:
-      - 节点选择
       - 全局直连
+      - 节点选择
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
   - interval: 300
