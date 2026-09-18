@@ -68,7 +68,7 @@
 
 ---
 
-## 🙏 感谢
+##  感谢
 
 * [xiaolin-007](https://github.com/xiaolin-007/clash-verge-script)
 * [Loyalsoldier](https://github.com/Loyalsoldier/clash-rules)
