@@ -28,8 +28,17 @@ dns:
       - https://8.8.8.8/dns-query
       - https://8.8.4.4/dns-query
   forward:
-    - geosite:
-        match: cn,private
+    - proxy_rule_set:
+        match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+        value: Domestic-DoH
+    - domain_suffix:
+        match: cn
+        value: Domestic-DoH
+    - domain_suffix:
+        match: lan
+        value: Domestic-DoH
+    - domain_suffix:
+        match: local
         value: Domestic-DoH
     - default: Foreign-DoH
 
@@ -319,7 +328,7 @@ rules:
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
       policy: 全局直连
-  - geosite:
+  - domain_suffix:
       match: cn
       policy: 全局直连
   - rule_set:
