@@ -74,7 +74,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
 
   - select:
@@ -82,7 +81,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
 
   - select:
@@ -90,7 +88,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
 
   - select:
@@ -98,21 +95,18 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
 
   - select:
       name: AI
       policies:
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/chxm1023/Script_X@main/icon/ChatGPT/ChatGPT4.png
 
   - select:
       name: TikTok
       policies:
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png
 
   - select:
@@ -120,7 +114,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
 
   - select:
@@ -128,7 +121,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png
 
   - select:
@@ -136,7 +128,6 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
 
   - select:
@@ -144,14 +135,12 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png
 
   - select:
       name: 动画疯
       policies:
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
 
   - select:
@@ -159,7 +148,6 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
 
   - select:
@@ -188,7 +176,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      flatten: true
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
 
   - select:
