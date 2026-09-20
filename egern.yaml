@@ -1,0 +1,343 @@
+# ==============================================================================
+# Egern 专属配置文件 (适用于 iOS 客户端)
+# 功能特色：18 组全彩图标、防 DNS & WebRTC 泄露、国内外 DoH 分流、全量规则自洽
+# 使用方法：在下方 policy_groups 的 [节点选择] 处填入你的机场订阅链接即可
+# ==============================================================================
+
+http_port: 6152
+socks_port: 6153
+vif_only: true
+hijack_dns:
+  - "*:53"
+proxy_latency_test_url: https://cp.cloudflare.com/generate_204
+direct_latency_test_url: http://wifi.vivo.com.cn/generate_204
+
+dns:
+  bootstrap:
+    - 223.5.5.5
+    - 119.29.29.29
+  upstreams:
+    Domestic-DNS:
+      - 223.5.5.5
+      - 119.29.29.29
+    Domestic-DoH:
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+    Foreign-DoH:
+      - https://1.1.1.1/dns-query
+      - https://8.8.8.8/dns-query
+      - https://8.8.4.4/dns-query
+  forward:
+    - geosite:
+        match: cn,private
+        value: Domestic-DoH
+    - default: Foreign-DoH
+
+policy_groups:
+  # ----------------------------------------------------------------------------
+  # 策略组 1：主出站节点选择 (支持同时订阅多个机场或使用自建节点)
+  # 💡 提示：将下方 urls 替换为你自己的机场订阅链接
+  # ----------------------------------------------------------------------------
+  - external:
+      name: 节点选择
+      type: select
+      urls:
+        - https://airport-1.com/api/v1/client/subscribe?token=xxxx  # 👈 【机场订阅链接粘贴于此】
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
+
+  # ----------------------------------------------------------------------------
+  # 策略组 2：自动测速优选
+  # ----------------------------------------------------------------------------
+  - auto_test:
+      name: 自动选择
+      policies:
+        - 节点选择
+      url: https://cp.cloudflare.com/generate_204
+      interval: 300
+      tolerance: 50
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
+
+  - select:
+      name: 谷歌服务
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
+
+  - select:
+      name: YouTube
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
+
+  - select:
+      name: Telegram
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
+
+  - select:
+      name: Spotify
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
+
+  - select:
+      name: AI
+      policies:
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/chxm1023/Script_X@main/icon/ChatGPT/ChatGPT4.png
+
+  - select:
+      name: TikTok
+      policies:
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png
+
+  - select:
+      name: Netflix
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
+
+  - select:
+      name: 微软服务
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png
+
+  - select:
+      name: 苹果服务
+      policies:
+        - DIRECT
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+
+  - select:
+      name: iCloud服务
+      policies:
+        - DIRECT
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png
+
+  - select:
+      name: 动画疯
+      policies:
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
+
+  - select:
+      name: 哔哩哔哩港澳台
+      policies:
+        - DIRECT
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
+
+  - select:
+      name: 广告过滤
+      policies:
+        - REJECT
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png
+
+  - select:
+      name: 全局直连
+      policies:
+        - DIRECT
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
+
+  - select:
+      name: 全局拦截
+      policies:
+        - REJECT
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Reject.png
+
+  - select:
+      name: 漏网之鱼
+      policies:
+        - 节点选择
+        - DIRECT
+      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+
+  - select:
+      name: WebRTC防护
+      policies:
+        - REJECT
+        - 节点选择
+      icon: https://fastly.jsdelivr.net/gh/Niklaus88/icon@main/Webrtc.png
+
+rules:
+  # ----------------------------------------------------------------------------
+  # 1. 受信会议与实时音视频软件（优先放行或走专线代理，保障通话畅通）
+  # ----------------------------------------------------------------------------
+  - domain_suffix:
+      match: zoom.us
+      policy: DIRECT
+  - domain_suffix:
+      match: zoom.com
+      policy: DIRECT
+  - domain_suffix:
+      match: discord.com
+      policy: 节点选择
+  - domain_suffix:
+      match: discord.gg
+      policy: 节点选择
+
+  # ----------------------------------------------------------------------------
+  # 2. WebRTC STUN 协议探测拦截总门禁（默认静默拦截阻断真实 IP 泄露）
+  # ----------------------------------------------------------------------------
+  - dest_port:
+      match: "3478,5349,19302-19309"
+      policy: WebRTC防护
+  - domain_keyword:
+      match: stun
+      policy: WebRTC防护
+
+  # ----------------------------------------------------------------------------
+  # 3. 屏蔽 iOS / iPadOS 系统固件更新
+  # ----------------------------------------------------------------------------
+  - domain_keyword:
+      match: gdmf
+      policy: REJECT
+  - domain:
+      match: mesu.apple.com
+      policy: REJECT
+  - domain_suffix:
+      match: mesu.v.aaplimg.com
+      policy: REJECT
+  - domain:
+      match: updates.cdn-apple.com
+      policy: REJECT
+  - domain_suffix:
+      match: updates.g.aaplimg.com
+      policy: REJECT
+  - domain_suffix:
+      match: xp.apple.com
+      policy: REJECT
+  - domain:
+      match: appldnld.apple.com
+      policy: REJECT
+  - domain:
+      match: swscan.apple.com
+      policy: REJECT
+  - domain:
+      match: skl.apple.com
+      policy: REJECT
+
+  # ----------------------------------------------------------------------------
+  # 4. 核心隐私检测站专线
+  # ----------------------------------------------------------------------------
+  - domain_suffix:
+      match: browserleaks.com
+      policy: 节点选择
+  - domain_suffix:
+      match: browserleaks.org
+      policy: 节点选择
+  - domain_suffix:
+      match: ipleak.net
+      policy: 节点选择
+
+  # ----------------------------------------------------------------------------
+  # 5. Google 核心服务统一归拢
+  # ----------------------------------------------------------------------------
+  - domain_suffix:
+      match: googleapis.cn
+      policy: 谷歌服务
+  - domain_suffix:
+      match: gstatic.com
+      policy: 谷歌服务
+  - domain_suffix:
+      match: xn--ngstr-lra8j.com
+      policy: 谷歌服务
+  - domain_suffix:
+      match: github.io
+      policy: 节点选择
+
+  # ----------------------------------------------------------------------------
+  # 6. 细分应用与流媒体专线
+  # ----------------------------------------------------------------------------
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+      policy: 广告过滤
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+      policy: 苹果服务
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
+      policy: iCloud服务
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt
+      policy: 微软服务
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/YouTube.txt
+      policy: YouTube
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Netflix.txt
+      policy: Netflix
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Bahamut.txt
+      policy: 动画疯
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Spotify.txt
+      policy: Spotify
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/BilibiliHMT.txt
+      policy: 哔哩哔哩港澳台
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/AI.txt
+      policy: AI
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/TikTok.txt
+      policy: TikTok
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
+      policy: 谷歌服务
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+      policy: 节点选择
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+      policy: 节点选择
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+      policy: Telegram
+
+  # ----------------------------------------------------------------------------
+  # 7. 国内白名单优先放行（保障国内服务精准直连、绝不误走代理）
+  # ----------------------------------------------------------------------------
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+      policy: 全局直连
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+      policy: 全局直连
+  - geosite:
+      match: cn
+      policy: 全局直连
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+      policy: 全局直连
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+      policy: 全局直连
+  - geoip:
+      match: cn
+      policy: 全局直连
+
+  # ----------------------------------------------------------------------------
+  # 8. 境外非 CN 顶级域名与最终兜底
+  # ----------------------------------------------------------------------------
+  - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
+      policy: 节点选择
+  - default:
+      policy: 漏网之鱼
+
