@@ -40,7 +40,9 @@ dns:
     - domain_suffix:
         match: local
         value: Domestic-DoH
-    - default: Foreign-DoH
+    - domain_wildcard:
+        match: '*'
+        value: Foreign-DoH
 
 policy_groups:
   # ----------------------------------------------------------------------------
