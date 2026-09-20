@@ -1,8 +1,14 @@
 # ==============================================================================
-# Egern 专属配置文件 (适用于 iOS 客户端)
+# Egern 专属配置文件 (适用于 iOS 平台)
 # 功能特色：18 组全彩图标、防 DNS & WebRTC 泄露、国内外 DoH 分流、全量规则自洽
-# 使用方法：在下方 policy_groups 的 [节点选择] 处填入你的机场订阅链接即可
+# 💡 使用方法：仅需在下方 sub_urls 处修改一次你的机场订阅链接，全篇所有策略组自动同步引用
 # ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 🚀 全局订阅源定义 (YAML 锚点，只修改这里一次即可)
+# ------------------------------------------------------------------------------
+sub_urls: &sub_urls
+  - https://airport-1.com/api/v1/client/subscribe?token=xxxx  # 👈 【在此处填入你的机场订阅链接】
 
 http_port: 6152
 socks_port: 6153
@@ -46,34 +52,39 @@ dns:
 
 policy_groups:
   # ----------------------------------------------------------------------------
-  # 策略组 1：主出站节点选择 (支持同时订阅多个机场或使用自建节点)
-  # 💡 提示：将下方 urls 替换为你自己的机场订阅链接
+  # 策略组 1：主出站节点选择（第一项默认自动测速，下方自动平铺所有订阅节点供手选）
   # ----------------------------------------------------------------------------
-  - external:
+  - select:
       name: 节点选择
-      type: select
-      urls:
-        - https://airport-1.com/api/v1/client/subscribe?token=xxxx  # 👈 【机场订阅链接粘贴于此】
+      policies:
+        - 自动选择
+        - DIRECT
+      urls: *sub_urls
       filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
 
   # ----------------------------------------------------------------------------
-  # 策略组 2：自动测速优选
+  # 策略组 2：自动测速优选（在后台对所有订阅节点自动测速，自动选用延迟最低的节点）
   # ----------------------------------------------------------------------------
   - auto_test:
       name: 自动选择
-      policies:
-        - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       url: https://cp.cloudflare.com/generate_204
       interval: 300
       tolerance: 50
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
 
+  # ----------------------------------------------------------------------------
+  # 业务策略组（第一项默认选中[节点选择]走全局代理，第二项备选直连，下方平铺全部节点）
+  # ----------------------------------------------------------------------------
   - select:
       name: 谷歌服务
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
 
   - select:
@@ -81,6 +92,8 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
 
   - select:
@@ -88,6 +101,8 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
 
   - select:
@@ -95,18 +110,24 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
 
   - select:
       name: AI
       policies:
         - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/chxm1023/Script_X@main/icon/ChatGPT/ChatGPT4.png
 
   - select:
       name: TikTok
       policies:
         - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png
 
   - select:
@@ -114,6 +135,8 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
 
   - select:
@@ -121,6 +144,8 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png
 
   - select:
@@ -128,6 +153,8 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
 
   - select:
@@ -135,12 +162,16 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png
 
   - select:
       name: 动画疯
       policies:
         - 节点选择
+      urls: *sub_urls
+      filter: "(?i)台|tw|TW"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
 
   - select:
@@ -148,8 +179,13 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
 
+  # ----------------------------------------------------------------------------
+  # 系统规则与安全门禁策略组
+  # ----------------------------------------------------------------------------
   - select:
       name: 广告过滤
       policies:
@@ -176,6 +212,8 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
+      urls: *sub_urls
+      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
 
   - select:
@@ -351,3 +389,4 @@ rules:
       policy: 节点选择
   - default:
       policy: 漏网之鱼
+
