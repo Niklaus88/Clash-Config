@@ -1,14 +1,8 @@
 # ==============================================================================
 # Egern 专属配置文件 (适用于 iOS 平台)
-# 功能特色：18 组全彩图标、防 DNS & WebRTC 泄露、国内外 DoH 分流、全量规则自洽
-# 💡 使用方法：仅需在下方 sub_urls 处修改一次你的机场订阅链接，全篇所有策略组自动同步引用
+# 功能特色：17 组精选全彩图标、防 DNS & WebRTC 泄露、国内外 DoH 分流、微信与苹果硬直连保障
+# 💡 使用方法：在客户端通过 URL 导入本配置后，在 [工具] ➔ [代理] ➔ [节点选择] 处添加你的机场订阅即可
 # ==============================================================================
-
-# ------------------------------------------------------------------------------
-# 🚀 全局订阅源定义 (YAML 锚点，只修改这里一次即可)
-# ------------------------------------------------------------------------------
-sub_urls: &sub_urls
-  - https://airport-1.com/api/v1/client/subscribe?token=xxxx  # 👈 【在此处填入你的机场订阅链接】
 
 http_port: 6152
 socks_port: 6153
@@ -52,39 +46,24 @@ dns:
 
 policy_groups:
   # ----------------------------------------------------------------------------
-  # 策略组 1：主出站节点选择（第一项默认自动测速，下方自动平铺所有订阅节点供手选）
+  # 策略组 1：主出站节点选择 (外部订阅组，用户在客户端界面填入订阅链接即可全篇生效)
   # ----------------------------------------------------------------------------
-  - select:
+  - external:
       name: 节点选择
-      policies:
-        - 自动选择
-        - DIRECT
-      urls: *sub_urls
+      type: select
+      urls:
+        - https://airport.example.com/sub?token=xxxx  # 👈 在客户端界面 [编辑策略组] 粘贴你的订阅链接
       filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Proxy.png
 
   # ----------------------------------------------------------------------------
-  # 策略组 2：自动测速优选（在后台对所有订阅节点自动测速，自动选用延迟最低的节点）
-  # ----------------------------------------------------------------------------
-  - auto_test:
-      name: 自动选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
-      url: https://cp.cloudflare.com/generate_204
-      interval: 300
-      tolerance: 50
-      icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
-
-  # ----------------------------------------------------------------------------
-  # 业务策略组（第一项默认选中[节点选择]走全局代理，第二项备选直连，下方平铺全部节点）
+  # 业务策略组（全部引用 [节点选择]，界面只要填一次订阅，全部分组自动联动生效）
   # ----------------------------------------------------------------------------
   - select:
       name: 谷歌服务
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
 
   - select:
@@ -92,8 +71,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
 
   - select:
@@ -101,8 +78,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
 
   - select:
@@ -110,24 +85,18 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
 
   - select:
       name: AI
       policies:
         - 节点选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/chxm1023/Script_X@main/icon/ChatGPT/ChatGPT4.png
 
   - select:
       name: TikTok
       policies:
         - 节点选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TikTok.png
 
   - select:
@@ -135,8 +104,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
 
   - select:
@@ -144,8 +111,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Microsoft.png
 
   - select:
@@ -153,8 +118,6 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
 
   - select:
@@ -162,16 +125,12 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/iCloud.png
 
   - select:
       name: 动画疯
       policies:
         - 节点选择
-      urls: *sub_urls
-      filter: "(?i)台|tw|TW"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bahamut.png
 
   - select:
@@ -179,8 +138,6 @@ policy_groups:
       policies:
         - DIRECT
         - 节点选择
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png
 
   # ----------------------------------------------------------------------------
@@ -212,8 +169,6 @@ policy_groups:
       policies:
         - 节点选择
         - DIRECT
-      urls: *sub_urls
-      filter: "^(?!.*(官网|套餐|流量|异常|剩余)).*$"
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
 
   - select:
@@ -225,7 +180,44 @@ policy_groups:
 
 rules:
   # ----------------------------------------------------------------------------
-  # 1. 受信会议与实时音视频软件（优先放行或走专线代理，保障通话畅通）
+  # 1. 微信及国内核心高频服务（绝对内置硬规则，100% 走直连，防误走代理）
+  # ----------------------------------------------------------------------------
+  - domain_suffix:
+      match:
+        - weixin.qq.com
+        - weixin.com
+        - qpic.cn
+        - qq.com
+        - tencent.com
+        - alipay.com
+        - alipayobjects.com
+        - taobao.com
+        - jd.com
+        - bilibili.com
+        - 163.com
+        - baidu.com
+        - zhihu.com
+        - sina.com.cn
+      policy: 全局直连
+
+  # ----------------------------------------------------------------------------
+  # 2. 苹果服务与 iCloud 核心域名显式硬绑定（默认直连，防相册断流与异地风控）
+  # ----------------------------------------------------------------------------
+  - domain_suffix:
+      match:
+        - icloud.com
+        - icloud-content.com
+        - me.com
+      policy: iCloud服务
+  - domain_suffix:
+      match:
+        - apple.com
+        - itunes.com
+        - aaplimg.com
+      policy: 苹果服务
+
+  # ----------------------------------------------------------------------------
+  # 3. 受信会议与实时音视频软件（优先放行或走专线代理，保障通话畅通）
   # ----------------------------------------------------------------------------
   - domain_suffix:
       match: zoom.us
@@ -241,7 +233,7 @@ rules:
       policy: 节点选择
 
   # ----------------------------------------------------------------------------
-  # 2. WebRTC STUN 协议探测拦截总门禁（默认静默拦截阻断真实 IP 泄露）
+  # 4. WebRTC STUN 协议探测拦截总门禁（默认静默拦截阻断真实 IP 泄露）
   # ----------------------------------------------------------------------------
   - dest_port:
       match: "3478,5349,19302-19309"
@@ -251,7 +243,7 @@ rules:
       policy: WebRTC防护
 
   # ----------------------------------------------------------------------------
-  # 3. 屏蔽 iOS / iPadOS 系统固件更新
+  # 5. 屏蔽 iOS / iPadOS 系统固件更新
   # ----------------------------------------------------------------------------
   - domain_keyword:
       match: gdmf
@@ -282,7 +274,7 @@ rules:
       policy: REJECT
 
   # ----------------------------------------------------------------------------
-  # 4. 核心隐私检测站专线
+  # 6. 核心隐私检测站专线
   # ----------------------------------------------------------------------------
   - domain_suffix:
       match: browserleaks.com
@@ -295,7 +287,7 @@ rules:
       policy: 节点选择
 
   # ----------------------------------------------------------------------------
-  # 5. Google 核心服务统一归拢
+  # 7. Google 核心服务统一归拢
   # ----------------------------------------------------------------------------
   - domain_suffix:
       match: googleapis.cn
@@ -311,7 +303,7 @@ rules:
       policy: 节点选择
 
   # ----------------------------------------------------------------------------
-  # 6. 细分应用与流媒体专线
+  # 8. 细分应用与流媒体专线
   # ----------------------------------------------------------------------------
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
@@ -360,7 +352,7 @@ rules:
       policy: Telegram
 
   # ----------------------------------------------------------------------------
-  # 7. 国内白名单优先放行（保障国内服务精准直连、绝不误走代理）
+  # 9. 国内白名单优先放行（保障国内服务精准直连、绝不误走代理）
   # ----------------------------------------------------------------------------
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
@@ -382,7 +374,7 @@ rules:
       policy: 全局直连
 
   # ----------------------------------------------------------------------------
-  # 8. 境外非 CN 顶级域名与最终兜底
+  # 10. 境外非 CN 顶级域名与最终兜底
   # ----------------------------------------------------------------------------
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
