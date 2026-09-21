@@ -180,40 +180,71 @@ policy_groups:
 
 rules:
   # ----------------------------------------------------------------------------
-  # 1. 微信及国内核心高频服务（绝对内置硬规则，100% 走直连，防误走代理）
+  # 1. 微信及国内核心高频服务（绝对内置硬规则，100% 走直连）
   # ----------------------------------------------------------------------------
   - domain_suffix:
-      match:
-        - weixin.qq.com
-        - weixin.com
-        - qpic.cn
-        - qq.com
-        - tencent.com
-        - alipay.com
-        - alipayobjects.com
-        - taobao.com
-        - jd.com
-        - bilibili.com
-        - 163.com
-        - baidu.com
-        - zhihu.com
-        - sina.com.cn
+      match: weixin.qq.com
+      policy: 全局直连
+  - domain_suffix:
+      match: weixin.com
+      policy: 全局直连
+  - domain_suffix:
+      match: qpic.cn
+      policy: 全局直连
+  - domain_suffix:
+      match: qq.com
+      policy: 全局直连
+  - domain_suffix:
+      match: tencent.com
+      policy: 全局直连
+  - domain_suffix:
+      match: alipay.com
+      policy: 全局直连
+  - domain_suffix:
+      match: alipayobjects.com
+      policy: 全局直连
+  - domain_suffix:
+      match: taobao.com
+      policy: 全局直连
+  - domain_suffix:
+      match: jd.com
+      policy: 全局直连
+  - domain_suffix:
+      match: bilibili.com
+      policy: 全局直连
+  - domain_suffix:
+      match: 163.com
+      policy: 全局直连
+  - domain_suffix:
+      match: baidu.com
+      policy: 全局直连
+  - domain_suffix:
+      match: zhihu.com
+      policy: 全局直连
+  - domain_suffix:
+      match: sina.com.cn
       policy: 全局直连
 
   # ----------------------------------------------------------------------------
   # 2. 苹果服务与 iCloud 核心域名显式硬绑定（默认直连，防相册断流与异地风控）
   # ----------------------------------------------------------------------------
   - domain_suffix:
-      match:
-        - icloud.com
-        - icloud-content.com
-        - me.com
+      match: icloud.com
       policy: iCloud服务
   - domain_suffix:
-      match:
-        - apple.com
-        - itunes.com
-        - aaplimg.com
+      match: icloud-content.com
+      policy: iCloud服务
+  - domain_suffix:
+      match: me.com
+      policy: iCloud服务
+  - domain_suffix:
+      match: apple.com
+      policy: 苹果服务
+  - domain_suffix:
+      match: itunes.com
+      policy: 苹果服务
+  - domain_suffix:
+      match: aaplimg.com
       policy: 苹果服务
 
   # ----------------------------------------------------------------------------
