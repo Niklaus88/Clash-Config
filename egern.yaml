@@ -9,6 +9,7 @@ socks_port: 6153
 vif_only: true
 hijack_dns:
   - "*:53"
+geoip_db_url: https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country-without-asn.mmdb
 proxy_latency_test_url: https://cp.cloudflare.com/generate_204
 direct_latency_test_url: http://wifi.vivo.com.cn/generate_204
 
@@ -233,6 +234,24 @@ rules:
   - domain_suffix:
       match: sina.com.cn
       policy: 全局直连
+  - domain_suffix:
+      match: 126.com
+      policy: 全局直连
+  - domain_suffix:
+      match: 126.net
+      policy: 全局直连
+  - domain_suffix:
+      match: 127.net
+      policy: 全局直连
+  - domain_suffix:
+      match: netease.com
+      policy: 全局直连
+  - domain_suffix:
+      match: yeah.net
+      policy: 全局直连
+  - domain_suffix:
+      match: anythinktech.com
+      policy: 全局直连
 
   # ----------------------------------------------------------------------------
   # 2. 苹果服务与 iCloud 域名分流
@@ -354,23 +373,15 @@ rules:
   # 8. 国内域名与 IP 直连
   # ----------------------------------------------------------------------------
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
-      policy: 全局直连
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+      match: https://fastly.jsdelivr.net/gh/Repcz/Tool@X/Egern/Rules/ChinaDomain.yaml
       policy: 全局直连
   - domain_suffix:
       match: cn
       policy: 全局直连
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
-      policy: 全局直连
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
-      policy: 全局直连
   - geoip:
-      match: cn
+      match: CN
       policy: 全局直连
+      no_resolve: true
 
   # ----------------------------------------------------------------------------
   # 9. 境外域名与最终兜底
