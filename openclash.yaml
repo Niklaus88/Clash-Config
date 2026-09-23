@@ -456,57 +456,57 @@ rule-providers:
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Bahamut.txt
-    path: ./ruleset/xiaolin-007/bahamut.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Bahamut.txt
+    path: ./ruleset/Niklaus88/bahamut.yaml
   YouTube:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/YouTube.txt
-    path: ./ruleset/xiaolin-007/YouTube.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/YouTube.txt
+    path: ./ruleset/Niklaus88/YouTube.yaml
   Netflix:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Netflix.txt
-    path: ./ruleset/xiaolin-007/Netflix.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Netflix.txt
+    path: ./ruleset/Niklaus88/Netflix.yaml
   Spotify:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Spotify.txt
-    path: ./ruleset/xiaolin-007/Spotify.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Spotify.txt
+    path: ./ruleset/Niklaus88/Spotify.yaml
   BilibiliHMT:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/BilibiliHMT.txt
-    path: ./ruleset/xiaolin-007/BilibiliHMT.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/BilibiliHMT.txt
+    path: ./ruleset/Niklaus88/BilibiliHMT.yaml
   AI:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/AI.txt
-    path: ./ruleset/xiaolin-007/AI.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/AI.txt
+    path: ./ruleset/Niklaus88/AI.yaml
   TikTok:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/TikTok.txt
-    path: ./ruleset/xiaolin-007/TikTok.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/TikTok.txt
+    path: ./ruleset/Niklaus88/TikTok.yaml
   Microsoft:
     type: http
     format: yaml
     interval: 86400
     behavior: classical
-    url: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt
-    path: ./ruleset/xiaolin-007/Microsoft.yaml
+    url: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Microsoft.txt
+    path: ./ruleset/Niklaus88/Microsoft.yaml
 rules:
   # 受信会议与实时音视频软件（优先放行或走代理）
   - PROCESS-NAME,Zoom.exe,全局直连
