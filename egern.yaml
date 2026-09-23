@@ -180,6 +180,15 @@ policy_groups:
 
 rules:
   # ----------------------------------------------------------------------------
+  # 1. WebRTC STUN 探测总门禁（置顶防御，防止 B站/小米等国内 STUN 探针被直连截胡）
+  # ----------------------------------------------------------------------------
+  - dest_port:
+      match: "3478,5349,19302-19309"
+      policy: WebRTC防护
+  - domain_keyword:
+      match: stun
+      policy: WebRTC防护
+  # ----------------------------------------------------------------------------
   # 1. 微信及国内核心服务直连
   # ----------------------------------------------------------------------------
   - domain_suffix:
@@ -264,16 +273,6 @@ rules:
       policy: 节点选择
 
   # ----------------------------------------------------------------------------
-  # 4. WebRTC STUN 探测拦截
-  # ----------------------------------------------------------------------------
-  - dest_port:
-      match: "3478,5349,19302-19309"
-      policy: WebRTC防护
-  - domain_keyword:
-      match: stun
-      policy: WebRTC防护
-
-  # ----------------------------------------------------------------------------
   # 5. 常见检测站点走代理
   # ----------------------------------------------------------------------------
   - domain_suffix:
@@ -315,28 +314,28 @@ rules:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
       policy: iCloud服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Microsoft.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Microsoft.txt
       policy: 微软服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/YouTube.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/YouTube.txt
       policy: YouTube
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Netflix.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Netflix.txt
       policy: Netflix
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Bahamut.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Bahamut.txt
       policy: 动画疯
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/Spotify.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Spotify.txt
       policy: Spotify
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/BilibiliHMT.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/BilibiliHMT.txt
       policy: 哔哩哔哩港澳台
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/AI.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/AI.txt
       policy: AI
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/TikTok.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/TikTok.txt
       policy: TikTok
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
