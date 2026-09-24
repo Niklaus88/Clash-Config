@@ -486,6 +486,9 @@ rules:
   # 哔哩哔哩全系服务及第三方客户端漫游解析
   - DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台
   - DOMAIN-SUFFIX,bilibili.com,哔哩哔哩港澳台
+  - DOMAIN-SUFFIX,bilibili.cn,哔哩哔哩港澳台
+  - DOMAIN-SUFFIX,biliapi.cn,哔哩哔哩港澳台
+  - DOMAIN-SUFFIX,biligame.net,哔哩哔哩港澳台
   - DOMAIN-SUFFIX,biliapi.net,哔哩哔哩港澳台
   - DOMAIN-SUFFIX,biliapi.com,哔哩哔哩港澳台
   - DOMAIN-SUFFIX,bilivideo.com,哔哩哔哩港澳台
