@@ -213,10 +213,10 @@ const rules = [
   "DOMAIN-SUFFIX,github.io,节点选择", // Github Pages
   "DOMAIN,v2rayse.com,节点选择", // V2rayse节点工具
   // 哔哩哔哩全系服务及第三方客户端漫游解析
-  "PROCESS-NAME,tv.danmaku.bili,哔哩哔哩港澳台",
-  "PROCESS-NAME,com.bilibili.app.in,哔哩哔哩港澳台",
-  "PROCESS-NAME,com.android.purebilibili,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台",
+  "PROCESS-NAME,com.android.purebilibili,哔哩哔哩港澳台", // Bilipai 第三方客户端
+  "DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台", // 漫游解析服务器
+  "DOMAIN,api.bilibili.com,全局直连", // 👈 核心放行：官方App首页推荐流直连，彻底杜绝 connection closed 报错
+  "DOMAIN,api.vc.bilibili.com,全局直连", // 👈 核心放行：视频中心初始化直连
   "DOMAIN-SUFFIX,bilibili.com,哔哩哔哩港澳台",
   "DOMAIN-SUFFIX,biliapi.net,哔哩哔哩港澳台",
   "DOMAIN-SUFFIX,biliapi.com,哔哩哔哩港澳台",
