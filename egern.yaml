@@ -221,9 +221,6 @@ rules:
       match: jd.com
       policy: 全局直连
   - domain_suffix:
-      match: bilibili.com
-      policy: 全局直连
-  - domain_suffix:
       match: 163.com
       policy: 全局直连
   - domain_suffix:
@@ -348,6 +345,18 @@ rules:
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Spotify.yaml
       policy: Spotify
+  - domain_suffix:
+      match: bilibili.com
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: bilibili.tv
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: bilivideo.com
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: b23.tv
+      policy: 哔哩哔哩港澳台
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/BilibiliHMT.yaml
       policy: 哔哩哔哩港澳台
