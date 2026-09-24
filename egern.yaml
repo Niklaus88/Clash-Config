@@ -349,13 +349,31 @@ rules:
       match: bilibili.com
       policy: 哔哩哔哩港澳台
   - domain_suffix:
-      match: bilibili.tv
+      match: biliapi.net
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: biliapi.com
       policy: 哔哩哔哩港澳台
   - domain_suffix:
       match: bilivideo.com
       policy: 哔哩哔哩港澳台
   - domain_suffix:
+      match: bilivideo.cn
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: biligame.com
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: bilibili.tv
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
       match: b23.tv
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: acgvideo.com
+      policy: 哔哩哔哩港澳台
+  - domain_suffix:
+      match: hdslb.com
       policy: 哔哩哔哩港澳台
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/BilibiliHMT.yaml
