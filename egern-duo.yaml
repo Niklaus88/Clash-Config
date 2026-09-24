@@ -31,7 +31,7 @@ dns:
       - https://8.8.4.4/dns-query
   forward:
     - proxy_rule_set:
-        match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+        match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/ChinaDomain.yaml
         value: Domestic-DoH
     - domain_suffix:
         match: cn
@@ -445,103 +445,53 @@ rules:
       policy: 节点选择
 
   # ----------------------------------------------------------------------------
-  # 7. 应用及流媒体规则集
+  # 7. 应用及流媒体规则集（统一采用 Niklaus88/rules 原生 Egern 规则集，杜绝解析失效）
   # ----------------------------------------------------------------------------
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Reject.yaml
       policy: 广告过滤
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Apple.yaml
       policy: 苹果服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/iCloud.yaml
       policy: iCloud服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Microsoft.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Microsoft.yaml
       policy: 微软服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/YouTube.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/YouTube.yaml
       policy: YouTube
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Netflix.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Netflix.yaml
       policy: Netflix
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Bahamut.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Bahamut.yaml
       policy: 动画疯
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/Spotify.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Spotify.yaml
       policy: Spotify
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/BilibiliHMT.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/BilibiliHMT.yaml
       policy: 哔哩哔哩港澳台
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/AI.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/AI.yaml
       policy: AI
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/rule/TikTok.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/TikTok.yaml
       policy: TikTok
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Google.yaml
       policy: 谷歌服务
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Proxy.yaml
       policy: 节点选择
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
-      policy: 节点选择
-  # ----------------------------------------------------------------------------
-  # Telegram 核心流量防护（ASN + 官方数据中心 IPv4 强匹配，彻底杜绝纯 IP 漏网）
-  # ----------------------------------------------------------------------------
-  - asn:
-      match: "AS62041"
-      policy: Telegram
-      no_resolve: true
-  - asn:
-      match: "AS44907"
-      policy: Telegram
-      no_resolve: true
-  - asn:
-      match: "AS59930"
-      policy: Telegram
-      no_resolve: true
-  - asn:
-      match: "AS211157"
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 149.154.160.0/20
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 91.108.4.0/22
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 91.108.8.0/22
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 91.108.12.0/22
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 91.108.16.0/22
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 91.108.56.0/22
-      policy: Telegram
-      no_resolve: true
-  - ip_cidr:
-      match: 185.76.151.0/24
-      policy: Telegram
-      no_resolve: true
 
   # ----------------------------------------------------------------------------
   # 8. 国内域名与 IP 直连
   # ----------------------------------------------------------------------------
   - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Repcz/Tool@X/Egern/Rules/ChinaDomain.yaml
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/ChinaDomain.yaml
       policy: 全局直连
   - domain_suffix:
       match: cn
@@ -554,9 +504,6 @@ rules:
   # ----------------------------------------------------------------------------
   # 9. 境外域名与最终兜底
   # ----------------------------------------------------------------------------
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
-      policy: 节点选择
   - default:
       policy: 漏网之鱼
 
