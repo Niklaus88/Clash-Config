@@ -508,7 +508,10 @@
       },
       {
         "domain_suffix": [
-          "bsbsb.top"
+          "bsbsb.top",
+          "bilibili.cn",
+          "biliapi.cn",
+          "biligame.net"
         ],
         "outbound": "哔哩哔哩港澳台"
       },
