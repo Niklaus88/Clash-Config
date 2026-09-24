@@ -379,7 +379,7 @@ function main(config) {
       "type": "select",
       "proxies": ["全局直连", "节点选择"],
       "include-all": true,
-      "filter": "^(?!.*(官网|套餐|流量|异常|剩余)).*$",
+      "filter": "(?i)^(?!.*(官网|套餐|流量|异常|剩余)).*(港|hk|hong|🇭🇰|台|tw|taiwan|🇹🇼|澳|mo|macau|🇲🇴).*$",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/bilibili.png"
     },
     {
