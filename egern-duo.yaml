@@ -484,6 +484,29 @@ rules:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Google.yaml
       policy: 谷歌服务
   - rule_set:
+      match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Telegram.yaml
+      policy: Telegram
+  - asn:
+      match: "AS62041"
+      policy: Telegram
+      no_resolve: true
+  - asn:
+      match: "AS44907"
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 149.154.160.0/20
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.56.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.4.0/22
+      policy: Telegram
+      no_resolve: true
+  - rule_set:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Proxy.yaml
       policy: 节点选择
 
