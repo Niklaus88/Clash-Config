@@ -212,20 +212,12 @@ const rules = [
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务", // Google Play下载服务
   "DOMAIN-SUFFIX,github.io,节点选择", // Github Pages
   "DOMAIN,v2rayse.com,节点选择", // V2rayse节点工具
-  // 哔哩哔哩全系服务及第三方客户端漫游解析
-  "DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台", // 漫游解析服务器
-  "DOMAIN,api.bilibili.com,全局直连", // 👈 核心放行：官方App首页推荐流直连，彻底杜绝 connection closed 报错
-  "DOMAIN,api.vc.bilibili.com,全局直连", // 👈 核心放行：视频中心初始化直连
-  "DOMAIN-SUFFIX,bilibili.com,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,biliapi.net,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,biliapi.com,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,bilivideo.com,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,bilivideo.cn,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,b23.tv,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,hdslb.com,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,biligame.com,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,bilibili.tv,哔哩哔哩港澳台",
-  "DOMAIN-SUFFIX,acgvideo.com,哔哩哔哩港澳台",
+  // 哔哩哔哩港澳台番剧专属分流与漫游解析（主站保持直连，番剧精准走代理）
+  "DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台", // Bilipai 漫游解析服务器
+  "DOMAIN-SUFFIX,bilibili.tv,哔哩哔哩港澳台", // 海外版主站
+  "DOMAIN-SUFFIX,akamaized.net,哔哩哔哩港澳台", // 港澳台专属番剧播放 CDN
+  "DOMAIN,p.bstarstatic.com,哔哩哔哩港澳台",
+  "DOMAIN,p-bstarstatic.akamaized.net,哔哩哔哩港澳台",
   // Loyalsoldier 规则集
   "RULE-SET,applications,全局直连",
   "RULE-SET,private,全局直连",
