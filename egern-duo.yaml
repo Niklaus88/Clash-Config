@@ -10,6 +10,7 @@ vif_only: true
 hijack_dns:
   - "*:53"
 geoip_db_url: https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country-without-asn.mmdb
+asn_db_url: https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb
 proxy_latency_test_url: https://cp.cloudflare.com/generate_204
 direct_latency_test_url: http://wifi.vivo.com.cn/generate_204
 
@@ -488,9 +489,53 @@ rules:
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
       policy: 节点选择
-  - rule_set:
-      match: https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+  # ----------------------------------------------------------------------------
+  # Telegram 核心流量防护（ASN + 官方数据中心 IPv4 强匹配，彻底杜绝纯 IP 漏网）
+  # ----------------------------------------------------------------------------
+  - asn:
+      match: "AS62041"
       policy: Telegram
+      no_resolve: true
+  - asn:
+      match: "AS44907"
+      policy: Telegram
+      no_resolve: true
+  - asn:
+      match: "AS59930"
+      policy: Telegram
+      no_resolve: true
+  - asn:
+      match: "AS211157"
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 149.154.160.0/20
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.4.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.8.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.12.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.16.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 91.108.56.0/22
+      policy: Telegram
+      no_resolve: true
+  - ip_cidr:
+      match: 185.76.151.0/24
+      policy: Telegram
+      no_resolve: true
 
   # ----------------------------------------------------------------------------
   # 8. 国内域名与 IP 直连
