@@ -468,12 +468,6 @@ rules:
   - rule_set:
       match: https://fastly.jsdelivr.net/gh/Niklaus88/rules@main/egern/Spotify.yaml
       policy: Spotify
-  - domain:
-      match: api.bilibili.com
-      policy: DIRECT
-  - domain:
-      match: api.vc.bilibili.com
-      policy: DIRECT
   - domain_suffix:
       match: bilibili.com
       policy: 哔哩哔哩港澳台
