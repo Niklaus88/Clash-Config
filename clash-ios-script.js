@@ -100,6 +100,18 @@ const rules = [
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务",
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务",
   "DOMAIN-SUFFIX,github.io,节点选择",
+  // 哔哩哔哩全系服务及第三方客户端漫游解析
+  "DOMAIN-SUFFIX,bsbsb.top,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,bilibili.com,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,biliapi.net,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,biliapi.com,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,bilivideo.com,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,bilivideo.cn,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,b23.tv,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,hdslb.com,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,biligame.com,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,bilibili.tv,哔哩哔哩港澳台",
+  "DOMAIN-SUFFIX,acgvideo.com,哔哩哔哩港澳台",
 
   // 4. 内置轻量 GEOSITE 专业分流
   "GEOSITE,category-ads-all,广告过滤",
