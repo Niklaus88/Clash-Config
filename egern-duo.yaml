@@ -472,16 +472,10 @@ rules:
       match: bilibili.com
       policy: 哔哩哔哩港澳台
   - domain_suffix:
-      match: bilibili.cn
-      policy: 哔哩哔哩港澳台
-  - domain_suffix:
       match: biliapi.net
       policy: 哔哩哔哩港澳台
   - domain_suffix:
       match: biliapi.com
-      policy: 哔哩哔哩港澳台
-  - domain_suffix:
-      match: biliapi.cn
       policy: 哔哩哔哩港澳台
   - domain_suffix:
       match: bilivideo.com
@@ -491,9 +485,6 @@ rules:
       policy: 哔哩哔哩港澳台
   - domain_suffix:
       match: biligame.com
-      policy: 哔哩哔哩港澳台
-  - domain_suffix:
-      match: biligame.net
       policy: 哔哩哔哩港澳台
   - domain_suffix:
       match: bilibili.tv
