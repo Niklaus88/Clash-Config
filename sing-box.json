@@ -223,6 +223,8 @@
         "全局直连"
       ]
     },
+    // 💡 提示：如需针对 B 站港澳台单独指定节点（实现主节点选美国、B站单独选台湾），
+    // 可在下方 outbounds 列表中追加你的台湾/香港节点名称（例如 "台湾 01"）
     {
       "tag": "哔哩哔哩港澳台",
       "type": "selector",
@@ -452,6 +454,9 @@
       },
       {
         "domain_suffix": [
+          "browserleaks.com",
+          "browserleaks.org",
+          "ipleak.net",
           "github.io"
         ],
         "outbound": "节点选择"
@@ -500,6 +505,12 @@
       {
         "rule_set": "bahamut",
         "outbound": "动画疯"
+      },
+      {
+        "domain_suffix": [
+          "bsbsb.top"
+        ],
+        "outbound": "哔哩哔哩港澳台"
       },
       {
         "rule_set": "bilibili",
