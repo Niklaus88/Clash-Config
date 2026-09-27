@@ -454,9 +454,6 @@
       },
       {
         "domain_suffix": [
-          "browserleaks.com",
-          "browserleaks.org",
-          "ipleak.net",
           "github.io"
         ],
         "outbound": "节点选择"
