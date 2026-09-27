@@ -204,9 +204,6 @@ const rules = [
   "DST-PORT,19309,WebRTC防护",
   "DOMAIN-KEYWORD,stun,WebRTC防护",
   // 自定义规则
-  "DOMAIN-SUFFIX,browserleaks.com,节点选择",
-  "DOMAIN-SUFFIX,browserleaks.org,节点选择",
-  "DOMAIN-SUFFIX,ipleak.net,节点选择",
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务", // Google静态资源
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,谷歌服务", // Google Play下载服务
