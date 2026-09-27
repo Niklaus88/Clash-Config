@@ -534,15 +534,15 @@
         "outbound": "节点选择"
       },
       {
+        "rule_set": "geolocation-!cn",
+        "outbound": "节点选择"
+      },
+      {
         "rule_set": [
           "geosite-cn",
           "geoip-cn"
         ],
         "outbound": "全局直连"
-      },
-      {
-        "rule_set": "geolocation-!cn",
-        "outbound": "节点选择"
       }
     ],
     "rule_set": [
