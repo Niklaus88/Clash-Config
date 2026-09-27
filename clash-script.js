@@ -225,7 +225,7 @@ const rules = [
   "RULE-SET,applications,全局直连",
   "RULE-SET,private,全局直连",
   "RULE-SET,reject,广告过滤",
-    "RULE-SET,apple,苹果服务",
+  "RULE-SET,apple,苹果服务",
   "RULE-SET,icloud,iCloud服务",
   "RULE-SET,Microsoft,微软服务",
   "RULE-SET,YouTube,YouTube",
