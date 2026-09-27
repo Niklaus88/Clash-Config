@@ -242,11 +242,12 @@ const rules = [
   "RULE-SET,direct,全局直连",
   "RULE-SET,lancidr,全局直连,no-resolve",
   "RULE-SET,cncidr,全局直连,no-resolve",
-  // 其他规则
+  // 核心分流：境外非中国域名优先走代理（解决海外未被 GFW 屏蔽的测试站/小众网站误判直连导致真实 IP 泄露）
+  "GEOSITE,geolocation-!cn,节点选择",
+  // 国内白名单直连
   "GEOSITE,CN,全局直连",
   "GEOIP,LAN,全局直连,no-resolve",
   "GEOIP,CN,全局直连,no-resolve",
-  "RULE-SET,tld-not-cn,节点选择",
   "MATCH,漏网之鱼"
 ];
 // 代理组通用配置
@@ -267,6 +268,14 @@ function main(config) {
   if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
+
+  // 配置全局 Geo 资源更新地址（采用 Loyalsoldier 经过清洗去重的 Geo 规则库）
+  config["geox-url"] = {
+    "geoip": "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat",
+    "geosite": "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
+    "mmdb": "https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb",
+    "asn": "https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+  };
 
   // 覆盖原配置中DNS配置
   config["dns"] = dnsConfig;
