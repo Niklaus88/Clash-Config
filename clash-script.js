@@ -3,7 +3,7 @@ const domesticNameservers = [
   "https://223.5.5.5/dns-query", // 阿里DoH
   "https://doh.pub/dns-query" // 腾讯DoH
 ];
-// 国外DNS服务器（Cloudflare + Google 顶级双核心）
+// 国外DNS服务器
 const foreignNameservers = [
   "https://1.1.1.1/dns-query", // Cloudflare DoH
   "https://8.8.8.8/dns-query", // Google DoH
