@@ -128,15 +128,15 @@ const rules = [
   // 5. 明确被墙服务走代理
   "GEOSITE,gfw,节点选择",
 
-  // 6. 国内白名单优先直连（保障国内服务精准直连、绝不误走代理消耗流量）
+  // 6. 境外非中国域名优先走代理（解决海外未被 GFW 屏蔽的测试站/小众网站误判直连导致真实 IP 泄露）
+  "GEOSITE,geolocation-!cn,节点选择",
+
+  // 7. 国内白名单优先直连（保障国内服务精准直连、绝不误走代理消耗流量）
   "GEOSITE,private,全局直连",
   "GEOSITE,cn,全局直连",
   "GEOIP,telegram,Telegram,no-resolve",
   "GEOIP,lan,全局直连,no-resolve",
   "GEOIP,cn,全局直连,no-resolve",
-
-  // 7. 境外非中国域名全量走代理（彻底解决类似 browserleaks 等未被 GFW 屏蔽的境外测试站走直连暴露 IP 的问题）
-  "GEOSITE,geolocation-!cn,节点选择",
 
   // 8. 兜底
   "MATCH,漏网之鱼"
@@ -149,6 +149,14 @@ function main(config) {
   if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
+
+  // 注入 Loyalsoldier 清洗后的 GeoX 资源源
+  config["geox-url"] = {
+    "geoip": "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat",
+    "geosite": "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
+    "mmdb": "https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb",
+    "asn": "https://fastly.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+  };
 
   // 注入轻量 DNS
   config["dns"] = dnsConfig;
