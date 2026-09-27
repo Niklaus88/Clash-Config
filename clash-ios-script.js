@@ -9,7 +9,7 @@ const domesticNameservers = [
   "https://doh.pub/dns-query"
 ];
 
-// 国外 DoH（Cloudflare + Google 顶级双核心）
+// 国外 DoH
 const foreignNameservers = [
   "https://1.1.1.1/dns-query",
   "https://8.8.8.8/dns-query",
