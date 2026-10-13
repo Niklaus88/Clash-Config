@@ -404,15 +404,14 @@ function main(config) {
       ...groupBaseOption,
       "name": "广告过滤",
       "type": "select",
-      "proxies": ["REJECT", "DIRECT"],
+      "proxies": ["REJECT", "DIRECT", "节点选择"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png"
     },
     {
       ...groupBaseOption,
       "name": "全局直连",
       "type": "select",
-      "proxies": ["DIRECT", "节点选择"],
-      "include-all": true,
+      "proxies": ["DIRECT"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png"
     },
     {
