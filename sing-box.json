@@ -139,32 +139,28 @@
       "tag": "谷歌服务",
       "type": "selector",
       "outbounds": [
-        "节点选择",
-        "全局直连"
+        "节点选择"
       ]
     },
     {
       "tag": "YouTube",
       "type": "selector",
       "outbounds": [
-        "节点选择",
-        "全局直连"
+        "节点选择"
       ]
     },
     {
       "tag": "Telegram",
       "type": "selector",
       "outbounds": [
-        "节点选择",
-        "全局直连"
+        "节点选择"
       ]
     },
     {
       "tag": "Spotify",
       "type": "selector",
       "outbounds": [
-        "节点选择",
-        "全局直连"
+        "节点选择"
       ]
     },
     {
@@ -187,8 +183,7 @@
       "tag": "Netflix",
       "type": "selector",
       "outbounds": [
-        "节点选择",
-        "全局直连"
+        "节点选择"
       ]
     },
     {
@@ -238,7 +233,8 @@
       "type": "selector",
       "outbounds": [
         "block",
-        "direct"
+        "direct",
+        "节点选择"
       ]
     },
     {
