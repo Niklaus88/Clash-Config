@@ -156,7 +156,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 全局直连
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
   - interval: 300
@@ -169,7 +168,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 全局直连
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
   - interval: 300
@@ -182,7 +180,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 全局直连
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
   - interval: 300
@@ -195,7 +192,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 全局直连
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
   - interval: 300
@@ -232,7 +228,6 @@ proxy-groups:
     type: select
     proxies:
       - 节点选择
-      - 全局直连
     include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
   - interval: 300
@@ -312,6 +307,7 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
+      - 节点选择
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png
   - interval: 300
     timeout: 5000
@@ -323,8 +319,6 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 节点选择
-    include-all: true
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
   - interval: 300
     timeout: 5000
