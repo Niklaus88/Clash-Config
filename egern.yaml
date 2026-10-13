@@ -65,28 +65,24 @@ policy_groups:
       name: 谷歌服务
       policies:
         - 节点选择
-        - DIRECT
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
 
   - select:
       name: YouTube
       policies:
         - 节点选择
-        - DIRECT
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/YouTube.png
 
   - select:
       name: Telegram
       policies:
         - 节点选择
-        - DIRECT
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
 
   - select:
       name: Spotify
       policies:
         - 节点选择
-        - DIRECT
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Spotify.png
 
   - select:
@@ -105,7 +101,6 @@ policy_groups:
       name: Netflix
       policies:
         - 节点选择
-        - DIRECT
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
 
   - select:
@@ -150,13 +145,13 @@ policy_groups:
       policies:
         - REJECT
         - DIRECT
+        - 节点选择
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Advertising.png
 
   - select:
       name: 全局直连
       policies:
         - DIRECT
-        - 节点选择
       icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
 
   - select:
