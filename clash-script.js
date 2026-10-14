@@ -37,30 +37,7 @@ const dnsConfig = {
     "time.*.gov",
     "pool.ntp.org",
     // 微信快速登录检测失败
-    "localhost.work.weixin.qq.com",
-    // === 防止 WebRTC STUN/TURN 域名被分配 198.18.x.x 假 IP ===
-    "+.stun.*",
-    "+.stun.*.*",
-    "+.stun.*.*.*",
-    "+.stun.*.*.*.*",
-    "stun.*",
-    "stun.*.*",
-    "stun.*.*.*",
-    "+.turn.*",
-    "+.turn.*.*",
-    "+.turn.*.*.*",
-    "+.turn.*.*.*.*",
-    "turn.*",
-    "turn.*.*",
-    "turn.*.*.*",
-    "+.stun.l.google.com",
-    "+.stun1.l.google.com",
-    "+.stun2.l.google.com",
-    "+.stun3.l.google.com",
-    "+.stun4.l.google.com",
-    "lens.l.google.com",
-    "*.n.n.srv.nintendo.net",
-    "+.stun.services.mozilla.com"
+    "localhost.work.weixin.qq.com"
   ],
   "default-nameserver": ["223.5.5.5", "119.29.29.29"], // 可修改成自己 ISP 的 DNS
   "nameserver": [...foreignNameservers],
@@ -226,7 +203,6 @@ const rules = [
   "DST-PORT,19308,WebRTC防护",
   "DST-PORT,19309,WebRTC防护",
   "DOMAIN-KEYWORD,stun,WebRTC防护",
-  "DOMAIN-KEYWORD,turn,WebRTC防护",
   // 自定义规则
   "DOMAIN-SUFFIX,googleapis.cn,谷歌服务", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,谷歌服务", // Google静态资源
