@@ -42,7 +42,7 @@
 | <img src="https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png" width="18" height="18" valign="middle"> **全局直连** | `DIRECT` | 国内网站及局域网私有地址出口 |
 | <img src="https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Reject.png" width="18" height="18" valign="middle"> **全局拦截** | `REJECT` | 全局危险连接及特定端口拦截出口 |
 | <img src="https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png" width="18" height="18" valign="middle"> **漏网之鱼** | `节点选择` | 未命中任何前置分流规则的流量，默认走代理出口兜底 |
-| <img src="https://fastly.jsdelivr.net/gh/Niklaus88/icon@main/Webrtc.png" width="18" height="18" valign="middle"> **WebRTC防护** | `REJECT-DROP` | WebRTC STUN 探测端口拦截。默认静默丢弃防止网页获取真实公网 IP，遇视频会议需求可手动切为代理节点 |
+| <img src="https://fastly.jsdelivr.net/gh/Niklaus88/icon@main/Webrtc.png" width="18" height="18" valign="middle"> **WebRTC防护** | `REJECT-DROP` | WebRTC STUN 探测端口拦截。默认静默丢弃，防止网页获取真实公网 IP，遇视频会议需求可手动切为代理节点 |
 
 ---
 
