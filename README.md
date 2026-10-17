@@ -10,6 +10,7 @@
 | 方案 | 适用客户端 | 说明 | 文件链接 |
 | :--- | :--- | :--- | :--- |
 | **通用 JS 脚本** | [FlClash](https://github.com/chen08209/FlClash)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)、[Mihomo Party](https://github.com/mihomo-party-org/mihomo-party) | <img src="https://img.shields.io/badge/-%E6%8E%A8%E8%8D%90-2ea44f" height="18" valign="middle"> 挂载在现有订阅上即可自动补充规则，由客户端动态管理 API 密钥 | [clash-script.js](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-script.js) |
+| **英文版 JS 脚本** | [FlClash](https://github.com/chen08209/FlClash)、[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)、[Mihomo Party](https://github.com/mihomo-party-org/mihomo-party) | 全英文策略组命名（Proxy / AdBlock / Direct / Final 等），适合习惯英文界面的用户 | [clash-script-en.js](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-script-en.js) |
 | **iOS 专属脚本** | [Clash Rule based proxy utility](https://apps.apple.com/us/app/clash-rule-based-proxy-utility/id6794257189) 等 iOS 端 | 使用内核内置规则，常驻内存控制在 2MB 左右，避免 iOS 网络扩展因内存限制退出 | [clash-ios-script.js](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-ios-script.js) |
 | **独立 YAML 配置** | Clash / Mihomo 桌面客户端 | 支持配置 1~3 个机场订阅自动聚合，默认绑定 127.0.0.1 且关闭局域网连接 | [clash-config.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/clash-config.yaml) |
 | **Sub-Store 模板** | Sub-Store 平台 | 作为 Sub-Store Artifact 产物模板使用，生成带分流与图标的配置 | [sub-store.yaml](https://raw.githubusercontent.com/Niklaus88/Clash-Config/main/sub-store.yaml) |
